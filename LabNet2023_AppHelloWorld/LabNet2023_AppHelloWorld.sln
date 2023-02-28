@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.33328.57
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LabNet2023_AppHelloWorld", "LabNet2023_AppHelloWorld.csproj", "{421F19DE-8194-4E61-8352-0474514FB359}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{421F19DE-8194-4E61-8352-0474514FB359}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{421F19DE-8194-4E61-8352-0474514FB359}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{421F19DE-8194-4E61-8352-0474514FB359}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{421F19DE-8194-4E61-8352-0474514FB359}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3C44BDF6-406D-401F-9D6B-2B82BA54ED57}
+	EndGlobalSection
+EndGlobal
