@@ -10,11 +10,21 @@ using System.Windows.Forms;
 
 namespace AppTransportePublico.LabNet2023.Vistas
 {
-    public partial class AgregarTransporte : Form
+    public partial class frmAgregarTransporte : Form
     {
-        public AgregarTransporte()
+        public frmAgregarTransporte()
         {
             InitializeComponent();
+        }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
+
+        private void frmAgregarTransporte_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
