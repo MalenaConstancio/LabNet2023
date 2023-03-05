@@ -1,4 +1,6 @@
-﻿using System;
+﻿using AppTransportePublico.LabNet2023.Entidades;
+using AppTransportePublico.LabNet2023.Vistas;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,12 +14,16 @@ namespace AppTransportePublico.LabNet2023.Vistas
 {
     public partial class frmPrincipal : Form
     {
+
+        List<TransportePublico> lstTransportes = new List<TransportePublico>();
+
         public frmPrincipal()
         {
             InitializeComponent();
         }
 
         private Form activeForm = null;
+
         private void AbrirForm(Form form)
         {
             if (activeForm != null)
@@ -38,15 +44,22 @@ namespace AppTransportePublico.LabNet2023.Vistas
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            Form agregarTransporte = new frmAgregarTransporte();
+            frmAgregarTransporte agregarTransporte = new frmAgregarTransporte();
+            agregarTransporte.LstTransportes = lstTransportes;
             AbrirForm(agregarTransporte);
 
         }
 
         private void btnListar_Click(object sender, EventArgs e)
         {
-            Form listarTransporte = new frmListarTransporte();
+            frmListarTransporte listarTransporte = new frmListarTransporte();
+            listarTransporte.LstTransportes = lstTransportes;
             AbrirForm(listarTransporte);
+        }
+
+        private void frmPrincipal_Load(object sender, EventArgs e)
+        {
+            
         }
     }
 }

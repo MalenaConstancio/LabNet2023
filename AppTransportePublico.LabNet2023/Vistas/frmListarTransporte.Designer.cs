@@ -30,6 +30,7 @@ namespace AppTransportePublico.LabNet2023.Vistas
         private void InitializeComponent()
         {
             this.btnCerrar = new System.Windows.Forms.Button();
+            this.lstvTransportes = new System.Windows.Forms.ListView();
             this.SuspendLayout();
             // 
             // btnCerrar
@@ -45,14 +46,25 @@ namespace AppTransportePublico.LabNet2023.Vistas
             this.btnCerrar.UseVisualStyleBackColor = false;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
+            // lstvTransportes
+            // 
+            this.lstvTransportes.HideSelection = false;
+            this.lstvTransportes.Location = new System.Drawing.Point(66, 37);
+            this.lstvTransportes.Name = "lstvTransportes";
+            this.lstvTransportes.Size = new System.Drawing.Size(278, 261);
+            this.lstvTransportes.TabIndex = 1;
+            this.lstvTransportes.UseCompatibleStateImageBehavior = false;
+            // 
             // frmListarTransporte
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(400, 343);
             this.ControlBox = false;
+            this.Controls.Add(this.lstvTransportes);
             this.Controls.Add(this.btnCerrar);
             this.Name = "frmListarTransporte";
+            this.Load += new System.EventHandler(this.frmListarTransporte_Load);
             this.ResumeLayout(false);
 
         }
@@ -60,5 +72,6 @@ namespace AppTransportePublico.LabNet2023.Vistas
         #endregion
 
         private System.Windows.Forms.Button btnCerrar;
+        private System.Windows.Forms.ListView lstvTransportes;
     }
 }

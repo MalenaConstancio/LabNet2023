@@ -63,16 +63,6 @@ namespace AppTransportePublico.LabNet2023.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap iconoCancelar {
-            get {
-                object obj = ResourceManager.GetObject("iconoCancelar", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap logoTransportePublico {
             get {
                 object obj = ResourceManager.GetObject("logoTransportePublico", resourceCulture);
