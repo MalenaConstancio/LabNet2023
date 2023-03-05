@@ -33,7 +33,7 @@ namespace AppTransportePublico.LabNet2023.Vistas
         private void frmListarTransporte_Load(object sender, EventArgs e)
         {
             lstvTransportes.View = View.Details;
-            
+            lstvTransportes.FullRowSelect = true;
 
             foreach (TransportePublico transporte in lstTransportes)
             {
@@ -58,27 +58,75 @@ namespace AppTransportePublico.LabNet2023.Vistas
 
         private void btnConducir_Click(object sender, EventArgs e)
         {
-            ArrayList arrTransporteSeleccionado = new ArrayList();
-            TransportePublico transporteSeleccionado = null;
-            arrTransporteSeleccionado.Add(lstvTransportes.SelectedItems);
-
-            if (arrTransporteSeleccionado[0].ToString() == "Taxi")
-            {
-               transporteSeleccionado = new Taxi((int)arrTransporteSeleccionado[0], arrTransporteSeleccionado[1].ToString());
-            }
-            else if (arrTransporteSeleccionado[0].ToString() == "Omnibus") {
-               transporteSeleccionado = new Omnibus((int)arrTransporteSeleccionado[0], arrTransporteSeleccionado[1].ToString());
-            }
-            lblListar.Text = transporteSeleccionado.Avanzar();
+         
             btnDetener.Visible = true;
+            btnConducir.Visible = false;
+            lstvTransportes.Visible = false;
+            TransportePublico transporte = null;
 
+            string seleccionado = lblListar.Text;
+            string[] datosSeleccionado = seleccionado.Split(' ');
+
+            string tipoTransporte = datosSeleccionado[0];
+            int cantidadPasajeros = Convert.ToInt32(datosSeleccionado[2]);
+
+            if (tipoTransporte == "Taxi")
+            {
+                 transporte = new Taxi(cantidadPasajeros, tipoTransporte);
+            }
+            else if (tipoTransporte == "Omnibus")
+            {
+                 transporte = new Omnibus(cantidadPasajeros, tipoTransporte);
+            }
+
+            lblListar.Text= transporte.Avanzar();
         }
 
         private void btnDetener_Click(object sender, EventArgs e)
         {
-           
+            btnConducir.Visible = false;
+            btnDetener.Visible = false;
+            TransportePublico transporte = null;
+
+            string seleccionado = lblListar.Text;
+            string[] datosSeleccionado = seleccionado.Split(' ');
+
+            string tipoTransporte = datosSeleccionado[0];
+            int cantidadPasajeros = Convert.ToInt32(datosSeleccionado[2]);
+
+            if (tipoTransporte == "Taxi")
+            {
+                transporte = new Taxi(cantidadPasajeros, tipoTransporte);
+            }
+            else if (tipoTransporte == "Omnibus")
+            {
+                transporte = new Omnibus(cantidadPasajeros, tipoTransporte);
+            }
+
+            lblListar.Text = transporte.Detenerse();
         }
 
-     
+        private void lstvTransportes_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ArrayList arrTransporteSeleccionado = new ArrayList();
+            TransportePublico transporteSeleccionado = null;
+
+            arrTransporteSeleccionado.Add(lstvTransportes.SelectedItems[0].SubItems[0].Text);
+            arrTransporteSeleccionado.Add(lstvTransportes.SelectedItems[0].SubItems[1].Text);
+
+            string tipoTransporte = arrTransporteSeleccionado[0].ToString();
+            int cantidadPasajeros = Convert.ToInt32(arrTransporteSeleccionado[1]);
+
+            if (tipoTransporte == "Taxi")
+            {
+                transporteSeleccionado = new Taxi(cantidadPasajeros, tipoTransporte);
+            }
+            else if (tipoTransporte == "Omnibus")
+            {
+                transporteSeleccionado = new Omnibus(cantidadPasajeros, tipoTransporte);
+            }
+            lstvTransportes.Visible = false;
+            lblListar.Text=transporteSeleccionado.TipoTransporte+" con "+transporteSeleccionado.CantPasajeros+" pasajeros.";
+        }
     }
 }

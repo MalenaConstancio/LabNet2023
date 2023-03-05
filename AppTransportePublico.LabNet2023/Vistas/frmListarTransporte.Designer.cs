@@ -60,7 +60,7 @@ namespace AppTransportePublico.LabNet2023.Vistas
             this.lstvTransportes.TabIndex = 1;
             this.lstvTransportes.UseCompatibleStateImageBehavior = false;
             this.lstvTransportes.View = System.Windows.Forms.View.List;
-            this.lstvTransportes.SelectedIndexChanged += new System.EventHandler(this.btnConducir_Click);
+            this.lstvTransportes.SelectedIndexChanged += new System.EventHandler(this.lstvTransportes_SelectedIndexChanged);
             // 
             // btnConducir
             // 

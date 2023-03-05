@@ -23,12 +23,12 @@ namespace AppTransportePublico.LabNet2023.Entidades
         
         public override string Avanzar()
         {
-            return "Taxi con" + CantPasajeros + "avanzando.";
+            return "Taxi con " + CantPasajeros + " pasajeros avanzando.";
         }
 
         public override string Detenerse()
         {
-            return "Taxi con" + CantPasajeros + "deteniendose.";
+            return "Taxi con " + CantPasajeros + " pasajeros deteniendose.";
         }
     }
 }
