@@ -32,6 +32,7 @@ namespace AppTransportePublico.LabNet2023.Vistas
 
         private void frmListarTransporte_Load(object sender, EventArgs e)
         {
+            btnConducir.Visible = false;
             lstvTransportes.View = View.Details;
             lstvTransportes.FullRowSelect = true;
 
@@ -108,6 +109,7 @@ namespace AppTransportePublico.LabNet2023.Vistas
 
         private void lstvTransportes_SelectedIndexChanged(object sender, EventArgs e)
         {
+            btnConducir.Visible = true;
             ArrayList arrTransporteSeleccionado = new ArrayList();
             TransportePublico transporteSeleccionado = null;
 
