@@ -20,7 +20,6 @@ namespace AppTransportePublico.LabNet2023.Vistas
 
         public List<TransportePublico> LstTransportes
         {
-            
             set { lstTransportes = value; }
         }
 
@@ -42,36 +41,60 @@ namespace AppTransportePublico.LabNet2023.Vistas
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-
-            string tipo = cbxTipoTransporte.SelectedItem.ToString();
-            int cantidad = Convert.ToInt32(txtCantidadPasajeros.Text);
-
-            if ((tipo == "Omnibus") && (cantidad < Omnibus.cantMaxPasajeros))
+            lblMensaje.Text = "";
+            if (cbxTipoTransporte.SelectedItem != null && txtCantidadPasajeros.Text!="")
             {
+                string tipo = cbxTipoTransporte.SelectedItem.ToString();
+                int cantidad = Convert.ToInt32(txtCantidadPasajeros.Text);
 
-                TipoTransporte oTipoTransporte = new TipoTransporte(0, "Omnibus");
-                TransportePublico oOmnibus =  new Omnibus(cantidad, oTipoTransporte);
-                //Omnibus oOmnibus = new Omnibus(cantidad, oTipoTransporte);
-                tpneg.AgregarTransporte(lstTransportes, oOmnibus);
-                LimpiarCampos();
-
+                if ((tipo == "Omnibus") && (cantidad <= Omnibus.cantMaxPasajeros))
+                {
+                    TransportePublico oOmnibus = new Omnibus(cantidad, "Omnibus");
+                    if (tpneg.AgregarTransporte(lstTransportes, oOmnibus) != null)
+                    {
+                        MessageBox.Show("Se agrego el transporte con exito");
+                        LimpiarCampos();
+                    }
+                    else {
+                        MessageBox.Show("Se completo el cupo de 5 Omnibus");
+                        LimpiarCampos();
+                    }                   
+                }
+                else if ((tipo == "Taxi") && (cantidad <= Taxi.cantMaxPasajeros))
+                {
+                    Taxi oTaxi = new Taxi(cantidad, "Taxi");
+                    if (tpneg.AgregarTransporte(lstTransportes, oTaxi)!=null) {
+                        MessageBox.Show("Se agrego el transporte con exito");
+                        LimpiarCampos();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Se completo el cupo de 5 Taxis");
+                        LimpiarCampos();
+                    }
+                }
+                else
+                {
+                    lblMensaje.Text = "Supera la cantidad máxima de pasajeros.\nTaxi = 4\nOmnibus=100";
+                }
             }
-
-            if ((tipo == "Taxi") && (cantidad < Taxi.cantMaxPasajeros))
+            else
             {
-
-                TipoTransporte oTipoTransporte = new TipoTransporte(1, "Taxi");
-                Taxi oTaxi = new Taxi(cantidad, oTipoTransporte);
-                tpneg.AgregarTransporte(lstTransportes, oTaxi);
-                LimpiarCampos();
-
+                lblMensaje.Text = "Debe seleccionar un tipo de transporte.\nDebe ingresar una cantidad de pasajeros.";
             }
-
         }
 
-        public void LimpiarCampos() {
+        private void LimpiarCampos() {
             cbxTipoTransporte.SelectedIndex = -1;
             txtCantidadPasajeros.Text = "";
+        }
+
+        private void soloNumeros_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsLetter(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

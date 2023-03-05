@@ -9,8 +9,14 @@ namespace AppTransportePublico.LabNet2023.Entidades
     public class Taxi : TransportePublico
     {
         public const int cantMaxPasajeros=4;
+        private string tipoTransporte = "Taxi";
 
-        public Taxi(int _cantidadPasajeros, TipoTransporte _oTipoTransporte) : base ( _cantidadPasajeros,_oTipoTransporte)
+        public string TipoTransporte
+        {
+            get { return tipoTransporte; }
+        }
+
+        public Taxi(int _cantidadPasajeros, string _tipoTransporte) : base ( _cantidadPasajeros,_tipoTransporte)
         {
             
         }

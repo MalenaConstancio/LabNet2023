@@ -54,6 +54,7 @@ namespace AppTransportePublico.LabNet2023.Vistas
             this.lstvTransportes.Size = new System.Drawing.Size(278, 261);
             this.lstvTransportes.TabIndex = 1;
             this.lstvTransportes.UseCompatibleStateImageBehavior = false;
+            this.lstvTransportes.View = System.Windows.Forms.View.List;
             // 
             // frmListarTransporte
             // 

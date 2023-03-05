@@ -9,10 +9,17 @@ namespace AppTransportePublico.LabNet2023.Entidades
     public class Omnibus : TransportePublico
     {
         public const int cantMaxPasajeros = 100;
+        private string tipoTransporte= "Omnibus";
 
-        public Omnibus(int _cantidadPasajeros, TipoTransporte _oTipoTransporte) : base(_cantidadPasajeros, _oTipoTransporte)
+        public string TipoTransporte
         {
+            get { return tipoTransporte; }
+        }
 
+
+        public Omnibus(int _cantidadPasajeros, string _tipoTransporte) : base(_cantidadPasajeros,_tipoTransporte)
+        {
+            
         }
 
         public override string Avanzar()

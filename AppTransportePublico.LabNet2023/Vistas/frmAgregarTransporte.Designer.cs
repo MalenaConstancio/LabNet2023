@@ -31,13 +31,13 @@ namespace AppTransportePublico.LabNet2023.Vistas
         {
             this.btnCerrar = new System.Windows.Forms.Button();
             this.grbxDatosTransporte = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtCantidadPasajeros = new System.Windows.Forms.TextBox();
+            this.cbxTipoTransporte = new System.Windows.Forms.ComboBox();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
-            this.cbxTipoTransporte = new System.Windows.Forms.ComboBox();
-            this.txtCantidadPasajeros = new System.Windows.Forms.TextBox();
             this.lblMensaje = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.grbxDatosTransporte.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -69,6 +69,51 @@ namespace AppTransportePublico.LabNet2023.Vistas
             this.grbxDatosTransporte.TabStop = false;
             this.grbxDatosTransporte.Text = "Datos del Transporte";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label2.Location = new System.Drawing.Point(15, 77);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(131, 15);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Cantidad de Pasajeros";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label1.Location = new System.Drawing.Point(112, 36);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(34, 15);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Tipo ";
+            // 
+            // txtCantidadPasajeros
+            // 
+            this.txtCantidadPasajeros.BackColor = System.Drawing.SystemColors.Window;
+            this.txtCantidadPasajeros.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.txtCantidadPasajeros.Location = new System.Drawing.Point(180, 74);
+            this.txtCantidadPasajeros.MaxLength = 3;
+            this.txtCantidadPasajeros.Name = "txtCantidadPasajeros";
+            this.txtCantidadPasajeros.Size = new System.Drawing.Size(121, 21);
+            this.txtCantidadPasajeros.TabIndex = 1;
+            this.txtCantidadPasajeros.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.soloNumeros_KeyPress);
+            // 
+            // cbxTipoTransporte
+            // 
+            this.cbxTipoTransporte.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.cbxTipoTransporte.FormattingEnabled = true;
+            this.cbxTipoTransporte.Items.AddRange(new object[] {
+            "Omnibus",
+            "Taxi"});
+            this.cbxTipoTransporte.Location = new System.Drawing.Point(180, 33);
+            this.cbxTipoTransporte.Name = "cbxTipoTransporte";
+            this.cbxTipoTransporte.Size = new System.Drawing.Size(121, 23);
+            this.cbxTipoTransporte.TabIndex = 0;
+            // 
             // btnAceptar
             // 
             this.btnAceptar.BackColor = System.Drawing.Color.LightSteelBlue;
@@ -92,28 +137,6 @@ namespace AppTransportePublico.LabNet2023.Vistas
             this.btnCancelar.Text = "CANCELAR";
             this.btnCancelar.UseVisualStyleBackColor = false;
             // 
-            // cbxTipoTransporte
-            // 
-            this.cbxTipoTransporte.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.cbxTipoTransporte.FormattingEnabled = true;
-            this.cbxTipoTransporte.Items.AddRange(new object[] {
-            "Omnibus",
-            "Taxi"});
-            this.cbxTipoTransporte.Location = new System.Drawing.Point(180, 33);
-            this.cbxTipoTransporte.Name = "cbxTipoTransporte";
-            this.cbxTipoTransporte.Size = new System.Drawing.Size(121, 23);
-            this.cbxTipoTransporte.TabIndex = 0;
-            // 
-            // txtCantidadPasajeros
-            // 
-            this.txtCantidadPasajeros.BackColor = System.Drawing.SystemColors.Window;
-            this.txtCantidadPasajeros.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.txtCantidadPasajeros.Location = new System.Drawing.Point(180, 74);
-            this.txtCantidadPasajeros.MaxLength = 3;
-            this.txtCantidadPasajeros.Name = "txtCantidadPasajeros";
-            this.txtCantidadPasajeros.Size = new System.Drawing.Size(121, 21);
-            this.txtCantidadPasajeros.TabIndex = 1;
-            // 
             // lblMensaje
             // 
             this.lblMensaje.AutoSize = true;
@@ -123,28 +146,6 @@ namespace AppTransportePublico.LabNet2023.Vistas
             this.lblMensaje.Name = "lblMensaje";
             this.lblMensaje.Size = new System.Drawing.Size(0, 18);
             this.lblMensaje.TabIndex = 5;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label1.Location = new System.Drawing.Point(112, 36);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(34, 15);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Tipo ";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label2.Location = new System.Drawing.Point(15, 77);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(131, 15);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Cantidad de Pasajeros";
             // 
             // frmAgregarTransporte
             // 

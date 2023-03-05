@@ -1,6 +1,7 @@
 ﻿
 using AppTransportePublico.LabNet2023.Entidades;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,30 +17,50 @@ namespace AppTransportePublico.LabNet2023.Negocio.Implementaciones
             {
                 lstTransportes.Add(oTransporte);
             }
+            else
+            {
+                return null;
+            }
 
             return lstTransportes;
         }
 
-        public Boolean VerificarCantidad(List<TransportePublico> lstTransportes , TransportePublico oTransporte) {
+        public ArrayList ContarTransportes(List<TransportePublico> lstTransportes) {
 
-            int cantidadTotalTaxis = 0;
-            int cantidadTotalOmnibus = 0;
+            int cantidadTaxis = 0;
+            int cantidadOmnibus = 0;
+           
             foreach (var item in lstTransportes)
             {
-                if (oTransporte.TipoTransporte.NombreTipoTransporte == "Taxi") {
-                    cantidadTotalTaxis += 1;
+                if (item.TipoTransporte == "Taxi")
+                {
+                    cantidadTaxis += 1;
                 }
-                else if (oTransporte.TipoTransporte.NombreTipoTransporte == "Omnibus") {
-                    cantidadTotalOmnibus += 1;
+                else if (item.TipoTransporte == "Omnibus")
+                {
+                    cantidadOmnibus += 1;
                 }
             }
 
-            if (oTransporte.TipoTransporte.NombreTipoTransporte == "Taxi" && cantidadTotalTaxis < 5)
+            ArrayList arrCantidades = new ArrayList();
+            arrCantidades.Add(cantidadTaxis);
+            arrCantidades.Add(cantidadOmnibus);
+
+            return arrCantidades;
+        }
+
+        public Boolean VerificarCantidad(List<TransportePublico> _lstTransportes, TransportePublico _oTransporte) {
+
+            ArrayList arrCantidades = ContarTransportes(_lstTransportes);
+            int cantidadTotalTaxis = (int)arrCantidades[0];
+            int cantidadTotalOmnibus = (int)arrCantidades[1];
+
+            if (_oTransporte.TipoTransporte == "Taxi" && cantidadTotalTaxis < 5)
             {
                 return true;
             }
-            else if (oTransporte.TipoTransporte.NombreTipoTransporte == "Omnibus" && cantidadTotalOmnibus < 5)
-            {
+            else if (_oTransporte.TipoTransporte == "Omnibus" && cantidadTotalOmnibus < 5) 
+            { 
                 return true;
             }
             else {

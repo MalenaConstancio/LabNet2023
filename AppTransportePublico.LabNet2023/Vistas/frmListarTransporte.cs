@@ -37,15 +37,16 @@ namespace AppTransportePublico.LabNet2023.Vistas
         private void frmListarTransporte_Load(object sender, EventArgs e)
         {
             lstvTransportes.View = View.Details;
-
             foreach (TransportePublico transporte in lstTransportes)
             {
                 ListViewItem item = new ListViewItem();
-                item.Checked = true;
-                item.Text = transporte.TipoTransporte.NombreTipoTransporte;
+                item.Text = transporte.TipoTransporte;
                 item.SubItems.Add(transporte.CantPasajeros.ToString());
+                
                 lstvTransportes.Items.Add(item);
             }
+            lstvTransportes.Columns.Add("Transporte", -1, HorizontalAlignment.Center);
+            lstvTransportes.Columns.Add("Pasajeros", -1, HorizontalAlignment.Center);
         }
     }
 }
