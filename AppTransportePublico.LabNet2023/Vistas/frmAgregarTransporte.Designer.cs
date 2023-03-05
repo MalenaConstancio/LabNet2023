@@ -136,6 +136,7 @@ namespace AppTransportePublico.LabNet2023.Vistas
             this.btnCancelar.TabIndex = 4;
             this.btnCancelar.Text = "CANCELAR";
             this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // lblMensaje
             // 

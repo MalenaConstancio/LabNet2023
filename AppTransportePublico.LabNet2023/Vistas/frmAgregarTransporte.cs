@@ -96,5 +96,10 @@ namespace AppTransportePublico.LabNet2023.Vistas
                 e.Handled = true;
             }
         }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            LimpiarCampos();
+        }
     }
 }
