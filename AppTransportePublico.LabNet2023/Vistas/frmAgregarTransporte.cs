@@ -47,35 +47,43 @@ namespace AppTransportePublico.LabNet2023.Vistas
                 string tipo = cbxTipoTransporte.SelectedItem.ToString();
                 int cantidad = Convert.ToInt32(txtCantidadPasajeros.Text);
 
-                if ((tipo == "Omnibus") && (cantidad <= Omnibus.cantMaxPasajeros))
+                if (cantidad > 0)
                 {
-                    TransportePublico oOmnibus = new Omnibus(cantidad, "Omnibus");
-                    if (tpneg.AgregarTransporte(lstTransportes, oOmnibus) != null)
+                    if ((tipo == "Omnibus") && (cantidad <= Omnibus.cantMaxPasajeros))
                     {
-                        MessageBox.Show("Se agrego el transporte con exito");
-                        LimpiarCampos();
+                        TransportePublico oOmnibus = new Omnibus(cantidad, "Omnibus");
+                        if (tpneg.AgregarTransporte(lstTransportes, oOmnibus) != null)
+                        {
+                            MessageBox.Show("Se agrego el transporte con exito");
+                            LimpiarCampos();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Se completo el cupo de 5 Omnibus");
+                            LimpiarCampos();
+                        }
                     }
-                    else {
-                        MessageBox.Show("Se completo el cupo de 5 Omnibus");
-                        LimpiarCampos();
-                    }                   
-                }
-                else if ((tipo == "Taxi") && (cantidad <= Taxi.cantMaxPasajeros))
-                {
-                    Taxi oTaxi = new Taxi(cantidad, "Taxi");
-                    if (tpneg.AgregarTransporte(lstTransportes, oTaxi)!=null) {
-                        MessageBox.Show("Se agrego el transporte con exito");
-                        LimpiarCampos();
+                    else if ((tipo == "Taxi") && (cantidad <= Taxi.cantMaxPasajeros))
+                    {
+                        Taxi oTaxi = new Taxi(cantidad, "Taxi");
+                        if (tpneg.AgregarTransporte(lstTransportes, oTaxi) != null)
+                        {
+                            MessageBox.Show("Se agrego el transporte con exito");
+                            LimpiarCampos();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Se completo el cupo de 5 Taxis");
+                            LimpiarCampos();
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("Se completo el cupo de 5 Taxis");
-                        LimpiarCampos();
+                        lblMensaje.Text = "Supera la cantidad máxima de pasajeros.\nTaxi = 4\nOmnibus=100";
                     }
                 }
-                else
-                {
-                    lblMensaje.Text = "Supera la cantidad máxima de pasajeros.\nTaxi = 4\nOmnibus=100";
+                else {
+                    lblMensaje.Text = "Debe ingresar una cantidad mayor a 0 \n de pasajeros.";
                 }
             }
             else
