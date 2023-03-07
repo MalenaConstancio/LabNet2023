@@ -8,40 +8,17 @@ namespace LabNetPractica2
 {
     public static class Logic
     {
-
-        public static int SolicitarUnNumero()
+        //Ejercicio 1:
+        public static decimal DividirPorCero(int divisor)
         {
-
-            Console.WriteLine("Ingrese un número entero: ");
-            string numIngresado = Console.ReadLine();
-
-            int numero = 0;
-            while (!int.TryParse(numIngresado, out numero))
-            {
-
-                Console.WriteLine("Ingrese un número válido: ");
-                numIngresado = Console.ReadLine();
-            }
-            return numero;
+            decimal resultado = divisor / 0;
+            return resultado;
         }
-
-        public static void DividirPorCero(int divisor)
+        //Ejercicio 2:
+        public static decimal Dividir(int dividendo, int divisor) 
         {
-            try
-            {
-                decimal resultado = divisor / 0;
-            }
-            catch (DivideByZeroException ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-            finally
-            {
-                Console.WriteLine(divisor + "/0");
-                Console.WriteLine("Fin");
-                Console.WriteLine(" ");
-            }
-
+            decimal resultado = dividendo / divisor;
+            return resultado;
         }
 
 

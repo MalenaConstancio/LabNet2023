@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace LabNetPractica2
 {
-    public class Menu
+    public static class Menu
     {
-        public int SeleccionarEjercicio() {
+        public static int SeleccionarEjercicio() {
 
             Console.WriteLine("Elija una opción : ");
             Console.WriteLine("Escriba 1 para Ejercicio 1");
@@ -29,6 +29,44 @@ namespace LabNetPractica2
                 Console.WriteLine("");
 
             return opcion;
+        }
+
+        //Ejercicio 1:
+        public static int SolicitarUnNumero()
+        {
+
+            Console.WriteLine("Ingrese un número entero: ");
+            string numIngresado = Console.ReadLine();
+
+            int numero = 0;
+            while (!int.TryParse(numIngresado, out numero))
+            {
+                Console.WriteLine("Ingrese un número válido: ");
+                numIngresado = Console.ReadLine();
+            }
+            return numero;
+        }
+
+        //Ejercicio 2:
+        public static int[] SolicitarDosNumeros() {
+
+            Console.WriteLine("Ingrese el dividendo: ");
+            string numUno = Console.ReadLine();
+            Console.WriteLine("Ingrese el divisor: ");
+            string numDos = Console.ReadLine();
+
+            int[] dosNumeros =null;
+
+            try {
+                dosNumeros = new int[2];
+                dosNumeros[0] = Convert.ToInt32(numUno);
+                dosNumeros[1] = Convert.ToInt32(numDos);
+            }
+            catch (FormatException ex) {
+                Console.WriteLine(ex.Message);
+                return null;
+            }
+            return dosNumeros;
         }
 
     }
