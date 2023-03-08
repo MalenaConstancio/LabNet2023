@@ -68,8 +68,8 @@ namespace LabNetPractica2
             }
             return dosNumeros;
         }
-        //Ejercicio 3:
-        //public static 
+       
+        
 
     }
 }

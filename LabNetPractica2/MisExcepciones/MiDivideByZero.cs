@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LabNetPractica2
 {
-    public static class MisExcepciones
+    public static class MiDivideByZero 
     {
         public static void DispararMiExcepcion()
         {
@@ -50,6 +50,6 @@ namespace LabNetPractica2
             throw new DivideByZeroException("Solo Chuck Norris divide por cero!");
         }
 
-
+        
     }
 }

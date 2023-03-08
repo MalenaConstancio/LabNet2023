@@ -45,7 +45,8 @@
   <ItemGroup>
     <Compile Include="Logic.cs" />
     <Compile Include="Menu.cs" />
-    <Compile Include="MisExcepciones.cs" />
+    <Compile Include="MisExcepciones\MiDivideByZero.cs" />
+    <Compile Include="MisExcepciones\MiStackOverflowException.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

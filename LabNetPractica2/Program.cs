@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using static LabNetPractica2.Logic;
 using static LabNetPractica2.Menu;
-using static LabNetPractica2.MisExcepciones;
+using static LabNetPractica2.MiDivideByZero;
 
 
 
@@ -86,7 +86,7 @@ namespace LabNetPractica2
                         break;
                     case 4:
                         try {
-                            DispararMiExcepcion();
+                            MostrarMiExcepcion("\nSoy el mensaje agregado por la pantalla");
                         }
                         catch (Exception ex) {
                             Console.WriteLine(ex.Message);

@@ -1,4 +1,5 @@
 ﻿
+using LabNetPractica2.MisExcepciones;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,6 +25,11 @@ namespace LabNetPractica2
         //Ejercicio 3:
         public static void MostrarExcepcion() {
             throw new StackOverflowException();
+        }
+        //Ejercicio 4:
+        public static void MostrarMiExcepcion(string mensajePantalla)
+        {
+            throw new MiStackOverflowException(mensajePantalla);
         }
 
 
