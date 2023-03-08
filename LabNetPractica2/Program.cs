@@ -58,10 +58,6 @@ namespace LabNetPractica2
                                 catch (Exception e) { Console.WriteLine(e.Message);}
                                 Console.WriteLine(ex.Message);
                             }
-                            catch (Exception ex)
-                            {
-                                Console.WriteLine(ex.Message);
-                            }
                             finally
                             {
                                 Console.WriteLine("Fin");
