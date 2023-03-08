@@ -1,4 +1,4 @@
-﻿using LabNetPractica2.MisExcepciones;
+﻿
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,7 +22,9 @@ namespace LabNetPractica2
             return resultado;
         }
         //Ejercicio 3:
-     
+        public static void MostrarExcepcion() {
+            throw new StackOverflowException();
+        }
 
 
     }

@@ -1,5 +1,4 @@
 ﻿
-using LabNetPractica2.MisExcepciones;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,6 +6,9 @@ using System.Text;
 using System.Threading.Tasks;
 using static LabNetPractica2.Logic;
 using static LabNetPractica2.Menu;
+using static LabNetPractica2.MisExcepciones;
+
+
 
 
 namespace LabNetPractica2
@@ -52,7 +54,13 @@ namespace LabNetPractica2
                             }
                             catch (DivideByZeroException ex)
                             {
-                                Console.WriteLine(ex.Message+" Solo Chuck Norris divide por cero!");
+                                try { DispararMiExcepcion();}
+                                catch (Exception e) { Console.WriteLine(e.Message);}
+                                Console.WriteLine(ex.Message);
+                            }
+                            catch (Exception ex)
+                            {
+                                Console.WriteLine(ex.Message);
                             }
                             finally
                             {
@@ -65,10 +73,11 @@ namespace LabNetPractica2
                     case 3:
                         
                         try {
-                            
+                            MostrarExcepcion();
                         }
                         catch (Exception ex) {
                             Console.WriteLine(ex.Message);
+                            Console.WriteLine(ex.GetType());
                         }
                         finally {
                             Console.WriteLine("Fin");
@@ -76,6 +85,19 @@ namespace LabNetPractica2
                         }
                         break;
                     case 4:
+                        try {
+                            DispararMiExcepcion();
+                        }
+                        catch (Exception ex) {
+                            Console.WriteLine(ex.Message);
+                            Console.WriteLine(ex.GetType());
+                        }
+                        finally
+                        {
+                            Console.WriteLine("Fin");
+                            Console.WriteLine("------------------------\n");
+                        }
+                        break;
                     default:
                         break;
                 }
