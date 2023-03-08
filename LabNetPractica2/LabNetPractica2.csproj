@@ -45,12 +45,13 @@
   <ItemGroup>
     <Compile Include="Logic.cs" />
     <Compile Include="Menu.cs" />
-    <Compile Include="MisExcepciones\MiDivideByZeroException.cs" />
+    <Compile Include="MisExcepciones\MiDividedByZeroException.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

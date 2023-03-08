@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace LabNetPractica2.MisExcepciones
 {
-    class MiDivideByZeroException:Exception {
-
-        public MiDivideByZeroException(String message) : base("Solo Chuck Norris divide por cero!") {  
-        }
-
+   public class MiDivideByZeroException : Exception
+    {
+        public MiDivideByZeroException(string message) : base("Solo Chuck Norris divide por cero!") { }
     }
 }

@@ -1,4 +1,5 @@
-﻿using LabNetPractica2.MisExcepciones;
+﻿
+using LabNetPractica2.MisExcepciones;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -49,13 +50,9 @@ namespace LabNetPractica2
                                 division = Dividir(dividendo, divisor);
                                 Console.WriteLine("El resultado es " + division);
                             }
-                            catch (MiDivideByZeroException ex)
-                            {
-                                Console.WriteLine(ex.Message);
-                            }
                             catch (DivideByZeroException ex)
                             {
-                                Console.WriteLine(ex.Message);
+                                Console.WriteLine(ex.Message+" Solo Chuck Norris divide por cero!");
                             }
                             finally
                             {
@@ -64,7 +61,20 @@ namespace LabNetPractica2
                             }
                         }
                         break;
+                    //Ejercicio 3:
                     case 3:
+                        
+                        try {
+                            
+                        }
+                        catch (Exception ex) {
+                            Console.WriteLine(ex.Message);
+                        }
+                        finally {
+                            Console.WriteLine("Fin");
+                            Console.WriteLine("------------------------\n");
+                        }
+                        break;
                     case 4:
                     default:
                         break;

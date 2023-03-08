@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LabNetPractica2.MisExcepciones;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,6 +21,8 @@ namespace LabNetPractica2
             decimal resultado = dividendo / divisor;
             return resultado;
         }
+        //Ejercicio 3:
+     
 
 
     }

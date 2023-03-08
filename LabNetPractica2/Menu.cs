@@ -63,11 +63,13 @@ namespace LabNetPractica2
                 dosNumeros[1] = Convert.ToInt32(numDos);
             }
             catch (FormatException ex) {
-                Console.WriteLine(ex.Message);
+                Console.WriteLine(ex.Message+" Seguro Ingreso una letra o no ingreso nada!");
                 return null;
             }
             return dosNumeros;
         }
+        //Ejercicio 3:
+        //public static 
 
     }
 }
