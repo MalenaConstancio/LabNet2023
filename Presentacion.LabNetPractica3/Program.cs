@@ -16,7 +16,7 @@ namespace Presentacion.LabNetPractica3
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run();
+            Application.Run(new frmPrincipal());
         }
     }
 }
