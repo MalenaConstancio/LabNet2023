@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace Presentacion.LabNetPractica3
 {
-    public partial class frmProductsByCategorie : Form
+    public partial class frmProductos : Form
     {
-        public frmProductsByCategorie()
+        public frmProductos()
         {
             InitializeComponent();
+        }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
