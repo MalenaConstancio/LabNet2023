@@ -36,9 +36,12 @@ namespace Presentacion.LabNetPractica3
 
         private void dgvCategorias_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            btnAgregar.Visible = false;
+            
+
             if (e.ColumnIndex == 3)
             {
-                btnAgregar.Enabled = false;
+                btnAceptar.Visible = true;
                 try
                 {
                     int filaSeleccionada = dgvCategorias.CurrentRow.Index;
@@ -57,7 +60,7 @@ namespace Presentacion.LabNetPractica3
             }
             else if (e.ColumnIndex == 4) 
             {
-                if (MessageBox.Show("Seguro que desea eliminar la categoria", "IMPORTANTE", MessageBoxButtons.YesNo, MessageBoxIcon.Error) == DialogResult.Yes) { 
+                if (MessageBox.Show("Seguro que desea eliminar la categoria?\n**Recuerde que solo puede eliminar Categorias \nque aun no tengan asignados Productos**", "IMPORTANTE", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes) { 
                     try
                     {
                         int filaSeleccionada = dgvCategorias.CurrentRow.Index;
@@ -65,11 +68,19 @@ namespace Presentacion.LabNetPractica3
                         Categories cat = new Categories();
                         cat.CategoryID = idCatergoria;
                         negCat.Delete(cat);
+                        MessageBox.Show("Se elimino correctamente la Categoria", "IMPORTANTE", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        dgvCategorias.DataSource = negCat.GetAll();
+                        btnAgregar.Visible = true;
                     }
                     catch (Exception)
                     {
                         MessageBox.Show("No se pudo eliminar la Categoria seleccionada", "IMPORTANTE", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        btnAgregar.Visible = true;
                     }
+                }
+                else
+                {
+                    btnAgregar.Visible = true;
                 }
             }
 
@@ -87,10 +98,14 @@ namespace Presentacion.LabNetPractica3
                 MessageBox.Show("Se editó correctamente la Categoria", "IMPORTANTE", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 LimpiarCampos();
                 dgvCategorias.DataSource = negCat.GetAll();
+                btnAgregar.Visible = true;
+                btnAceptar.Visible = false;
             }
             catch (Exception) {
                 MessageBox.Show("No se pudo editar la Categoria", "IMPORTANTE", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 LimpiarCampos();
+                btnAgregar.Visible = true;
+                btnAceptar.Visible = false;
             }
 
         }
@@ -102,10 +117,15 @@ namespace Presentacion.LabNetPractica3
                 Categories cat = new Categories();
                 cat.CategoryName = txtNombre.Text;
                 cat.Description = txtDescripcion.Text;
-                negCat.Add(cat);
-                MessageBox.Show("Se agregó correctamente la Categoria", "IMPORTANTE", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                if (negCat.Add(cat)) { 
+                MessageBox.Show("Se agrego correctamente la Categoria", "IMPORTANTE", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 LimpiarCampos();
                 dgvCategorias.DataSource = negCat.GetAll();
+                }
+                else{
+                    MessageBox.Show("La Categoria ya existe", "IMPORTANTE", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    LimpiarCampos();
+                }
             }
             catch (Exception ex) {
                 MessageBox.Show("No se pudo agregar la Categoria", "IMPORTANTE", MessageBoxButtons.OK, MessageBoxIcon.Error);

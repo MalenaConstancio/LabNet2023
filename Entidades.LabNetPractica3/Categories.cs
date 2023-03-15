@@ -14,6 +14,7 @@ namespace Entidades.LabNetPractica3
             Products = new HashSet<Products>();
         }
 
+      
         [Key]
         public int CategoryID { get; set; }
 

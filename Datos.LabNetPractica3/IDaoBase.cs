@@ -16,6 +16,6 @@ namespace Datos.LabNetPractica3
 
          bool Delete(T entity);
 
-         bool Exists(T entity);
+        
     }
 }

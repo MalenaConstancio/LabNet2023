@@ -211,12 +211,13 @@ namespace Presentacion.LabNetPractica3
             this.btnAceptar.BackColor = System.Drawing.Color.Lavender;
             this.btnAceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAceptar.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btnAceptar.Location = new System.Drawing.Point(443, 214);
+            this.btnAceptar.Location = new System.Drawing.Point(620, 214);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(82, 36);
             this.btnAceptar.TabIndex = 3;
             this.btnAceptar.Text = "EDITAR";
             this.btnAceptar.UseVisualStyleBackColor = false;
+            this.btnAceptar.Visible = false;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // btnCancelar
@@ -224,7 +225,7 @@ namespace Presentacion.LabNetPractica3
             this.btnCancelar.BackColor = System.Drawing.SystemColors.ControlLight;
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btnCancelar.Location = new System.Drawing.Point(540, 214);
+            this.btnCancelar.Location = new System.Drawing.Point(351, 214);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(83, 36);
             this.btnCancelar.TabIndex = 5;
@@ -237,7 +238,7 @@ namespace Presentacion.LabNetPractica3
             this.btnAgregar.BackColor = System.Drawing.Color.Honeydew;
             this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregar.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btnAgregar.Location = new System.Drawing.Point(346, 214);
+            this.btnAgregar.Location = new System.Drawing.Point(263, 214);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(82, 36);
             this.btnAgregar.TabIndex = 6;

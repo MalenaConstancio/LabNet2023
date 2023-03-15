@@ -22,7 +22,7 @@ namespace Datos.LabNetPractica3
 
         public abstract bool Delete(T entity);
 
-        public abstract bool Exists(T entity);
+        
    
     }
 }

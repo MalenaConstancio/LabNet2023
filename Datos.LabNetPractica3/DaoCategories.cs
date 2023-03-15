@@ -10,18 +10,18 @@ namespace Datos.LabNetPractica3
 {
     public class DaoCategories : DaoBase<Categories>
     {
-
-
         public override bool Add(Categories entity)
         {
-            if (Exists(entity)) { 
+            Categories existe = _context.Categories.FirstOrDefault(x => x.CategoryName == entity.CategoryName);
+            if (existe==null) {
                 try
-                {   
+                {
                     _context.Categories.Add(entity);
                     _context.SaveChanges();
                     return true;
                 }
-                catch (Exception) {
+                catch (Exception)
+                {
                     throw;
                 }
             }
@@ -73,28 +73,6 @@ namespace Datos.LabNetPractica3
             return _context.Categories.ToList();
         }
 
-        public override bool Exists(Categories entity)
-        {
-            DaoCategories daoCat = new DaoCategories();
-            try
-            {
-                var existe = from categorie in daoCat.GetAll()
-                             where categorie.CategoryName == entity.CategoryName
-                             select categorie;
-
-                
-                if (existe == null)
-                {
-                    return false;
-                }
-                
-                return true;
-
-            }
-            catch (Exception) {
-                throw;
-            }
-          
-        }
+     
     }
 }
