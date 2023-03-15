@@ -50,6 +50,7 @@ namespace Presentacion.LabNetPractica3
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategorias)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoriesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.northwindDataSet)).BeginInit();
@@ -186,6 +187,7 @@ namespace Presentacion.LabNetPractica3
             // txtNombre
             // 
             this.txtNombre.Location = new System.Drawing.Point(98, 41);
+            this.txtNombre.MaxLength = 15;
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(376, 21);
             this.txtNombre.TabIndex = 0;
@@ -246,12 +248,25 @@ namespace Presentacion.LabNetPractica3
             this.btnAgregar.UseVisualStyleBackColor = false;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.SystemColors.Control;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Red;
+            this.label4.Location = new System.Drawing.Point(130, 575);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(722, 16);
+            this.label4.TabIndex = 13;
+            this.label4.Text = "DENTRO DEL GRIDVIEW HACER CLICK UNICAMENTE EN LA CELDAS ELIMINAR Ó EDITAR";
+            // 
             // frmCategorias
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(956, 641);
             this.ControlBox = false;
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
@@ -266,6 +281,7 @@ namespace Presentacion.LabNetPractica3
             this.gbxCategorias.ResumeLayout(false);
             this.gbxCategorias.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -290,5 +306,6 @@ namespace Presentacion.LabNetPractica3
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.Button btnAgregar;
+        private System.Windows.Forms.Label label4;
     }
 }

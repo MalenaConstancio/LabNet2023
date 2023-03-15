@@ -51,6 +51,7 @@ namespace Presentacion.LabNetPractica3
                     txtId.Text = idCatergoria.ToString();
                     txtNombre.Text = nombreCategoria;
                     txtDescripcion.Text = descripcionCategoria;
+                    dgvCategorias.Visible = false;
                 }
                 catch (Exception) {
                     throw;
@@ -100,6 +101,7 @@ namespace Presentacion.LabNetPractica3
                 dgvCategorias.DataSource = negCat.GetAll();
                 btnAgregar.Visible = true;
                 btnAceptar.Visible = false;
+                dgvCategorias.Visible = true;
             }
             catch (Exception) {
                 MessageBox.Show("No se pudo editar la Categoria", "IMPORTANTE", MessageBoxButtons.OK, MessageBoxIcon.Error);

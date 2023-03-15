@@ -10,10 +10,21 @@ namespace Datos.LabNetPractica3
 {
     public class DaoCategories : DaoBase<Categories>
     {
+        
+
+        public DaoCategories() { 
+        
+        }
+
+        public DaoCategories(NorthwindContext context)
+        {
+            _context = context;
+        }
+
         public override bool Add(Categories entity)
         {
             Categories existe = _context.Categories.FirstOrDefault(x => x.CategoryName == entity.CategoryName);
-            if (existe==null) {
+            if (existe == null) {
                 try
                 {
                     _context.Categories.Add(entity);
