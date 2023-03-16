@@ -3,9 +3,9 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Linq;
-using Entidades.LabNetPractica3;
+using Entidades.LabNetPractica4;
 
-namespace Datos.LabNetPractica3
+namespace Datos.LabNetPractica4
 {
     public partial class NorthwindContext : DbContext
     {

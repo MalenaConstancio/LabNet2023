@@ -75,9 +75,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Entidades.LabNetPractica3\Entidades.LabNetPractica3.csproj">
+    <ProjectReference Include="..\Entidades.LabNetPractica3\Entidades.LabNetPractica4.csproj">
       <Project>{977549f3-4566-40af-9432-65e7fb5bc904}</Project>
-      <Name>Entidades.LabNetPractica3</Name>
+      <Name>Entidades.LabNetPractica4</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

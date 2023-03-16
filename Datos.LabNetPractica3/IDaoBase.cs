@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Datos.LabNetPractica3
+namespace Datos.LabNetPractica4
 {
     public interface IDaoBase<T>
     {

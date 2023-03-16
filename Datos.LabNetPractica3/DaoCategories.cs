@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Entidades.LabNetPractica4;
 
-using Entidades.LabNetPractica3;
-
-namespace Datos.LabNetPractica3
+namespace Datos.LabNetPractica4
 {
     public class DaoCategories : DaoBase<Categories>
     {

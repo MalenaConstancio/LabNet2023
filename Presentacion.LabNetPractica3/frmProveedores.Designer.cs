@@ -1,5 +1,5 @@
 ﻿
-namespace Presentacion.LabNetPractica3
+namespace Presentacion.LabNetPractica4
 {
     partial class frmProveedores
     {

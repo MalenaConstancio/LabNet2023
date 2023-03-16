@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Entidades.LabNetPractica3;
+using Entidades.LabNetPractica4;
 
-namespace Negocio.LabNetPractica3
+namespace Negocio.LabNetPractica4
 {
     public interface INCategories
     {

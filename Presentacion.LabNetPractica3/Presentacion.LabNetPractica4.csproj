@@ -116,13 +116,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Entidades.LabNetPractica3\Entidades.LabNetPractica3.csproj">
+    <ProjectReference Include="..\Entidades.LabNetPractica3\Entidades.LabNetPractica4.csproj">
       <Project>{977549f3-4566-40af-9432-65e7fb5bc904}</Project>
-      <Name>Entidades.LabNetPractica3</Name>
+      <Name>Entidades.LabNetPractica4</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Negocio.LabNetPractica3\Negocio.LabNetPractica3.csproj">
+    <ProjectReference Include="..\Negocio.LabNetPractica3\Negocio.LabNetPractica4.csproj">
       <Project>{cb2c08bc-86b3-4a07-94e2-c4e8e08cfe69}</Project>
-      <Name>Negocio.LabNetPractica3</Name>
+      <Name>Negocio.LabNetPractica4</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

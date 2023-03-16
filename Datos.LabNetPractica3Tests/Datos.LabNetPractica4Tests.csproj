@@ -76,8 +76,6 @@
     <Otherwise />
   </Choose>
   <ItemGroup>
-    <Compile Include="DaoCategoriesTests.cs" />
-    <Compile Include="DaoProveedorTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -85,13 +83,13 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Datos.LabNetPractica3\Datos.LabNetPractica3.csproj">
+    <ProjectReference Include="..\Datos.LabNetPractica3\Datos.LabNetPractica4.csproj">
       <Project>{A96986ED-81EE-42B4-84BC-A122B7E9F79C}</Project>
-      <Name>Datos.LabNetPractica3</Name>
+      <Name>Datos.LabNetPractica4</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Entidades.LabNetPractica3\Entidades.LabNetPractica3.csproj">
+    <ProjectReference Include="..\Entidades.LabNetPractica3\Entidades.LabNetPractica4.csproj">
       <Project>{977549F3-4566-40AF-9432-65E7FB5BC904}</Project>
-      <Name>Entidades.LabNetPractica3</Name>
+      <Name>Entidades.LabNetPractica4</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>

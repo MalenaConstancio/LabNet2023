@@ -7,10 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Negocio.LabNetPractica3;
-using Entidades.LabNetPractica3;
+using Negocio.LabNetPractica4;
+using Entidades.LabNetPractica4;
 
-namespace Presentacion.LabNetPractica3
+namespace Presentacion.LabNetPractica4
 {
     public partial class frmProveedores : Form
     {

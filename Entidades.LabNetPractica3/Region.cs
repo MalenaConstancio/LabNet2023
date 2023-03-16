@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 
-namespace Entidades.LabNetPractica3
+namespace Entidades.LabNetPractica4
 {
     [Table("Region")]
     public partial class Region
