@@ -38,7 +38,6 @@ namespace Presentacion.LabNetPractica3
             this.btnEditar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.btnEliminar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.categoriesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.northwindDataSet = new Presentacion.LabNetPractica3.NorthwindDataSet();
             this.gbxCategorias = new System.Windows.Forms.GroupBox();
             this.txtId = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -46,14 +45,12 @@ namespace Presentacion.LabNetPractica3
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.btnCerrar = new System.Windows.Forms.Button();
-            this.categoriesTableAdapter = new Presentacion.LabNetPractica3.NorthwindDataSetTableAdapters.CategoriesTableAdapter();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategorias)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoriesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.northwindDataSet)).BeginInit();
             this.gbxCategorias.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -125,12 +122,9 @@ namespace Presentacion.LabNetPractica3
             // categoriesBindingSource
             // 
             this.categoriesBindingSource.DataMember = "Categories";
-            this.categoriesBindingSource.DataSource = this.northwindDataSet;
             // 
             // northwindDataSet
             // 
-            this.northwindDataSet.DataSetName = "NorthwindDataSet";
-            this.northwindDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // gbxCategorias
             // 
@@ -206,7 +200,6 @@ namespace Presentacion.LabNetPractica3
             // 
             // categoriesTableAdapter
             // 
-            this.categoriesTableAdapter.ClearBeforeFill = true;
             // 
             // btnAceptar
             // 
@@ -277,7 +270,6 @@ namespace Presentacion.LabNetPractica3
             this.Load += new System.EventHandler(this.frmCategorias_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategorias)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoriesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.northwindDataSet)).EndInit();
             this.gbxCategorias.ResumeLayout(false);
             this.gbxCategorias.PerformLayout();
             this.ResumeLayout(false);
@@ -290,9 +282,8 @@ namespace Presentacion.LabNetPractica3
         private System.Windows.Forms.DataGridView dgvCategorias;
         private System.Windows.Forms.GroupBox gbxCategorias;
         private System.Windows.Forms.Button btnCerrar;
-        private NorthwindDataSet northwindDataSet;
+
         private System.Windows.Forms.BindingSource categoriesBindingSource;
-        private NorthwindDataSetTableAdapters.CategoriesTableAdapter categoriesTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn categoryIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn categoryNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;

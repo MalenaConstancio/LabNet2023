@@ -9,12 +9,6 @@ namespace Negocio.LabNetPractica3
 {
     public interface IProveedor
     {
-        bool Add(Suppliers entity);
-
-        List<Suppliers> GetAll();
-
-        bool Update(Suppliers entity);
-
-        bool Delete(Suppliers entity);
+      
     }
 }

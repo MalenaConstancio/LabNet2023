@@ -70,7 +70,6 @@ namespace Presentacion.LabNetPractica3
             this.btnProveedores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProveedores.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProveedores.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btnProveedores.Image = global::Presentacion.LabNetPractica3.Properties.Resources.iconoProveedores;
             this.btnProveedores.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnProveedores.Location = new System.Drawing.Point(3, 286);
             this.btnProveedores.Name = "btnProveedores";
@@ -108,7 +107,6 @@ namespace Presentacion.LabNetPractica3
             this.btnCategorias.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCategorias.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCategorias.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btnCategorias.Image = global::Presentacion.LabNetPractica3.Properties.Resources.iconoSuppliers;
             this.btnCategorias.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCategorias.Location = new System.Drawing.Point(3, 239);
             this.btnCategorias.Name = "btnCategorias";
@@ -127,7 +125,6 @@ namespace Presentacion.LabNetPractica3
             this.btnProductos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProductos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProductos.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btnProductos.Image = global::Presentacion.LabNetPractica3.Properties.Resources.iconoProduct;
             this.btnProductos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnProductos.Location = new System.Drawing.Point(3, 192);
             this.btnProductos.Name = "btnProductos";
@@ -140,7 +137,6 @@ namespace Presentacion.LabNetPractica3
             // imgLogo
             // 
             this.imgLogo.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.imgLogo.Image = global::Presentacion.LabNetPractica3.Properties.Resources.logoNorthwindResize;
             this.imgLogo.Location = new System.Drawing.Point(0, 0);
             this.imgLogo.Name = "imgLogo";
             this.imgLogo.Size = new System.Drawing.Size(156, 141);

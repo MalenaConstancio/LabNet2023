@@ -14,13 +14,7 @@ namespace Datos.LabNetPractica3
             _context = new NorthwindContext();
         }
 
-        public abstract bool Add(T entity);
-
-        public abstract List<T> GetAll();
-
-        public abstract bool Update(T entity);
-
-        public abstract bool Delete(T entity);
+       
 
         
    

@@ -8,13 +8,7 @@ namespace Datos.LabNetPractica3
 {
     public interface IDaoBase<T>
     {
-         bool Add(T entity);
-
-         List<T> GetAll();
-
-         bool Update(T entity);
-
-         bool Delete(T entity);
+        
 
         
     }

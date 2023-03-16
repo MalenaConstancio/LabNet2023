@@ -9,13 +9,7 @@ namespace Negocio.LabNetPractica3
 {
     public interface INCategories
     {
-        bool Add(Categories entity);
-
-        List<Categories> GetAll();
-
-        bool Update(Categories entity);
-
-        bool Delete(Categories entity);
+      
 
         
     }

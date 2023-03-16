@@ -11,36 +11,6 @@ namespace Negocio.LabNetPractica3
     public class NProveedor : IProveedor
     {
         DaoProveedor daoProv = new DaoProveedor();
-        public bool Add(Suppliers entity)
-        {
-            if (daoProv.Add(entity)) {
-                return true;
-            }
-            return false;
-        }
-
-        public bool Delete(Suppliers entity)
-        {
-            if (daoProv.Delete(entity))
-            {
-                return true;
-            }
-            return false;
-        }
-
-        public List<Suppliers> GetAll()
-        {
-            List<Suppliers> lstProveedores = daoProv.GetAll();
-            return lstProveedores;
-        }
-
-        public bool Update(Suppliers entity)
-        {
-            if (daoProv.Update(entity))
-            {
-                return true;
-            }
-            return false;
-        }
+      
     }
 }

@@ -44,9 +44,7 @@ namespace Presentacion.LabNetPractica3
             this.dgvProveedores = new System.Windows.Forms.DataGridView();
             this.txtTelefono = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.northwindDataSet1 = new Presentacion.LabNetPractica3.NorthwindDataSet1();
             this.suppliersBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.suppliersTableAdapter = new Presentacion.LabNetPractica3.NorthwindDataSet1TableAdapters.SuppliersTableAdapter();
             this.supplierIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.companyNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contactNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -60,7 +58,6 @@ namespace Presentacion.LabNetPractica3
             this.label4 = new System.Windows.Forms.Label();
             this.gbxProveedores.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProveedores)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.northwindDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.suppliersBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -226,17 +223,13 @@ namespace Presentacion.LabNetPractica3
             // 
             // northwindDataSet1
             // 
-            this.northwindDataSet1.DataSetName = "NorthwindDataSet1";
-            this.northwindDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // suppliersBindingSource
             // 
             this.suppliersBindingSource.DataMember = "Suppliers";
-            this.suppliersBindingSource.DataSource = this.northwindDataSet1;
             // 
             // suppliersTableAdapter
             // 
-            this.suppliersTableAdapter.ClearBeforeFill = true;
             // 
             // supplierIDDataGridViewTextBoxColumn
             // 
@@ -337,7 +330,6 @@ namespace Presentacion.LabNetPractica3
             this.gbxProveedores.ResumeLayout(false);
             this.gbxProveedores.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProveedores)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.northwindDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.suppliersBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -359,9 +351,7 @@ namespace Presentacion.LabNetPractica3
         private System.Windows.Forms.DataGridView dgvProveedores;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtTelefono;
-        private NorthwindDataSet1 northwindDataSet1;
         private System.Windows.Forms.BindingSource suppliersBindingSource;
-        private NorthwindDataSet1TableAdapters.SuppliersTableAdapter suppliersTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn supplierIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn companyNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn contactNameDataGridViewTextBoxColumn;

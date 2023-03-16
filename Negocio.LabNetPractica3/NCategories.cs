@@ -12,37 +12,6 @@ namespace Negocio.LabNetPractica3
     {
         DaoCategories daoCat = new DaoCategories();
 
-        public bool Add(Categories entity)
-        {
-            if (daoCat.Add(entity))
-            {
-                return true;
-            }
-            return false;
-        }
-
-        public bool Delete(Categories entity)
-        {
-            if (daoCat.Delete(entity))
-            {
-                return true;
-            }
-            return false;
-        }
-
-        public List<Categories> GetAll()
-        {
-            List<Categories> lstCategorias = daoCat.GetAll();
-            return lstCategorias;
-        }
-
-        public bool Update(Categories entity)
-        {
-            if (daoCat.Update(entity)) {
-                return true;
-            }
-            return false;
-           
-        }
+      
     }
 }
