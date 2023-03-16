@@ -8,18 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Presentacion.LabNetPractica4
+namespace Presentacion.LabNetPractica3
 {
-    public partial class frmProductos : Form
+    public partial class frmQuery1 : Form
     {
-        public frmProductos()
+        public frmQuery1()
         {
             InitializeComponent();
-        }
-
-        private void btnCerrar_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }

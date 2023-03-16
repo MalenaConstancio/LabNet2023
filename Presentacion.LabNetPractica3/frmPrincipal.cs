@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Presentacion.LabNetPractica3;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -27,31 +28,20 @@ namespace Presentacion.LabNetPractica4
             }
             activeForm = form;
             form.TopLevel = false;
-            pnlPrincipal.Controls.Add(form);
-            pnlPrincipal.Tag = form;
+            pnlQuery.Controls.Add(form);
+            pnlQuery.Tag = form;
             form.Show();
         }
 
-        private void btnProducts_Click(object sender, EventArgs e)
-        {
-            frmProductos form = new frmProductos();
-            AbrirForm(form);
-        }
-        private void btnCategorias_Click(object sender, EventArgs e)
-        {
-            frmCategorias form = new frmCategorias();
-            AbrirForm(form);
-        }
-        private void btnProveedores_Click(object sender, EventArgs e)
-        {
-            frmProveedores form = new frmProveedores();
-            AbrirForm(form);
-        }
         private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Dispose();
         }
 
-     
+        private void btnQuery1_Click(object sender, EventArgs e)
+        {
+            frmQuery1 form = new frmQuery1();
+            AbrirForm(form);
+        }
     }
 }

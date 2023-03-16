@@ -9,10 +9,7 @@ namespace Datos.LabNetPractica4
 {
     public partial class NorthwindContext : DbContext
     {
-        public NorthwindContext()
-            : base("name=NorthwindConnection")
-        {
-        }
+        public NorthwindContext(): base("name=NorthwindConnection") { }
 
         public virtual DbSet<Categories> Categories { get; set; }
         public virtual DbSet<CustomerDemographics> CustomerDemographics { get; set; }
