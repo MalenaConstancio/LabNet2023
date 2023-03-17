@@ -46,6 +46,22 @@ namespace Datos.LabNetPractica3
             return queryCustomer;
         }
 
+        public IQueryable<Customers> GetCustomersRegionWASintax()
+        {
+            var queryCustomer = from cust in db.Customers
+                                where cust.Region == "WA"
+                                select cust;
+
+            return queryCustomer;
+
+        }
+
+        public IQueryable<Customers> GetCustomersRegionWAMethod()
+        {
+            var queryCustomer = db.Customers.Select(e => e).Where(e => e.Region == "WA");
+
+            return queryCustomer;
+        }
 
     }
 }

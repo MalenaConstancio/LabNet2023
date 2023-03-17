@@ -44,8 +44,8 @@ namespace Presentacion.LabNetPractica4
             this.btnQuery3 = new System.Windows.Forms.Button();
             this.btnQuery2 = new System.Windows.Forms.Button();
             this.btnQuery1 = new System.Windows.Forms.Button();
-            this.imgLogo = new System.Windows.Forms.PictureBox();
             this.pnlQuery = new System.Windows.Forms.Panel();
+            this.imgLogo = new System.Windows.Forms.PictureBox();
             this.btnSalir = new System.Windows.Forms.Button();
             this.pnlBotonera.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).BeginInit();
@@ -242,6 +242,7 @@ namespace Presentacion.LabNetPractica4
             this.btnQuery4.TabIndex = 4;
             this.btnQuery4.Text = "4";
             this.btnQuery4.UseVisualStyleBackColor = false;
+            this.btnQuery4.Click += new System.EventHandler(this.btnQuery4_Click);
             // 
             // btnQuery3
             // 
@@ -297,6 +298,13 @@ namespace Presentacion.LabNetPractica4
             this.btnQuery1.UseVisualStyleBackColor = false;
             this.btnQuery1.Click += new System.EventHandler(this.btnQuery1_Click);
             // 
+            // pnlQuery
+            // 
+            this.pnlQuery.Location = new System.Drawing.Point(205, 4);
+            this.pnlQuery.Name = "pnlQuery";
+            this.pnlQuery.Size = new System.Drawing.Size(932, 641);
+            this.pnlQuery.TabIndex = 5;
+            // 
             // imgLogo
             // 
             this.imgLogo.BackColor = System.Drawing.SystemColors.ControlLight;
@@ -306,13 +314,6 @@ namespace Presentacion.LabNetPractica4
             this.imgLogo.Size = new System.Drawing.Size(192, 186);
             this.imgLogo.TabIndex = 0;
             this.imgLogo.TabStop = false;
-            // 
-            // pnlQuery
-            // 
-            this.pnlQuery.Location = new System.Drawing.Point(205, 4);
-            this.pnlQuery.Name = "pnlQuery";
-            this.pnlQuery.Size = new System.Drawing.Size(932, 641);
-            this.pnlQuery.TabIndex = 5;
             // 
             // btnSalir
             // 

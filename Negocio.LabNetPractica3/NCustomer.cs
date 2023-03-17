@@ -22,5 +22,11 @@ namespace Negocio.LabNetPractica3
             var lstCustomers = daoCus.GetCustomerSintax(idCustomer);
             return lstCustomers;
         }
+
+        public IQueryable<Customers> GetCustomersRegionWAMethod()
+        {
+            var lstCustomers = daoCus.GetCustomersRegionWAMethod();
+            return lstCustomers;
+        }
     }
 }
