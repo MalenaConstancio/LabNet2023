@@ -107,9 +107,20 @@
       <Name>Negocio.LabNetPractica4</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\iconoSearch.png" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\logoLinq.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconoSearch1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconoClose.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconoRefresh.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

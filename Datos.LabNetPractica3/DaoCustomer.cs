@@ -16,6 +16,10 @@ namespace Datos.LabNetPractica3
             _context = context;
         }
 
+        public DaoCustomer()
+        {
+        }
+
         NorthwindContext db = new NorthwindContext();
 
         public IQueryable<Customers> GetCustomerSintax(string idCustomer) {
@@ -27,14 +31,20 @@ namespace Datos.LabNetPractica3
             return queryCustomer;
         }
 
-        public List<Customers> GetCustomerMethod()
-        {
+        //public List<Customers> GetCustomerMethod(string idCustomer)
+        //{
 
+        //    var queryCustomer = db.Customers.Select(e => e).Where(e => e.CustomerID = idCustomer).ToList();
+
+        //    return queryCustomer;
+        //}
+
+        public List<Customers> GetAllCustomers()
+        {
             var queryCustomer = db.Customers.Select(e => e).ToList();
 
             return queryCustomer;
         }
-
 
 
     }

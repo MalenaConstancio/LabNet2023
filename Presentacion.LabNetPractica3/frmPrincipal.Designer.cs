@@ -44,13 +44,11 @@ namespace Presentacion.LabNetPractica4
             this.btnQuery3 = new System.Windows.Forms.Button();
             this.btnQuery2 = new System.Windows.Forms.Button();
             this.btnQuery1 = new System.Windows.Forms.Button();
+            this.pnlQuery = new System.Windows.Forms.Panel();
             this.imgLogo = new System.Windows.Forms.PictureBox();
             this.btnSalir = new System.Windows.Forms.Button();
-            this.dgvResults = new System.Windows.Forms.DataGridView();
-            this.pnlQuery = new System.Windows.Forms.Panel();
             this.pnlBotonera.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvResults)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlBotonera
@@ -72,7 +70,7 @@ namespace Presentacion.LabNetPractica4
             this.pnlBotonera.Controls.Add(this.imgLogo);
             this.pnlBotonera.Location = new System.Drawing.Point(5, 2);
             this.pnlBotonera.Name = "pnlBotonera";
-            this.pnlBotonera.Size = new System.Drawing.Size(194, 681);
+            this.pnlBotonera.Size = new System.Drawing.Size(194, 726);
             this.pnlBotonera.TabIndex = 0;
             // 
             // btnQuery13
@@ -85,7 +83,7 @@ namespace Presentacion.LabNetPractica4
             this.btnQuery13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnQuery13.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnQuery13.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnQuery13.Location = new System.Drawing.Point(3, 648);
+            this.btnQuery13.Location = new System.Drawing.Point(3, 671);
             this.btnQuery13.Name = "btnQuery13";
             this.btnQuery13.Size = new System.Drawing.Size(188, 32);
             this.btnQuery13.TabIndex = 13;
@@ -102,7 +100,7 @@ namespace Presentacion.LabNetPractica4
             this.btnQuery12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnQuery12.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnQuery12.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnQuery12.Location = new System.Drawing.Point(3, 610);
+            this.btnQuery12.Location = new System.Drawing.Point(3, 633);
             this.btnQuery12.Name = "btnQuery12";
             this.btnQuery12.Size = new System.Drawing.Size(188, 32);
             this.btnQuery12.TabIndex = 12;
@@ -119,7 +117,7 @@ namespace Presentacion.LabNetPractica4
             this.btnQuery11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnQuery11.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnQuery11.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnQuery11.Location = new System.Drawing.Point(3, 572);
+            this.btnQuery11.Location = new System.Drawing.Point(3, 595);
             this.btnQuery11.Name = "btnQuery11";
             this.btnQuery11.Size = new System.Drawing.Size(188, 32);
             this.btnQuery11.TabIndex = 11;
@@ -136,7 +134,7 @@ namespace Presentacion.LabNetPractica4
             this.btnQuery10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnQuery10.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnQuery10.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnQuery10.Location = new System.Drawing.Point(3, 534);
+            this.btnQuery10.Location = new System.Drawing.Point(3, 557);
             this.btnQuery10.Name = "btnQuery10";
             this.btnQuery10.Size = new System.Drawing.Size(188, 32);
             this.btnQuery10.TabIndex = 10;
@@ -153,7 +151,7 @@ namespace Presentacion.LabNetPractica4
             this.btnQuery9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnQuery9.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnQuery9.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnQuery9.Location = new System.Drawing.Point(3, 496);
+            this.btnQuery9.Location = new System.Drawing.Point(3, 519);
             this.btnQuery9.Name = "btnQuery9";
             this.btnQuery9.Size = new System.Drawing.Size(188, 32);
             this.btnQuery9.TabIndex = 9;
@@ -170,7 +168,7 @@ namespace Presentacion.LabNetPractica4
             this.btnQuery8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnQuery8.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnQuery8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnQuery8.Location = new System.Drawing.Point(3, 458);
+            this.btnQuery8.Location = new System.Drawing.Point(3, 481);
             this.btnQuery8.Name = "btnQuery8";
             this.btnQuery8.Size = new System.Drawing.Size(188, 32);
             this.btnQuery8.TabIndex = 8;
@@ -187,7 +185,7 @@ namespace Presentacion.LabNetPractica4
             this.btnQuery7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnQuery7.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnQuery7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnQuery7.Location = new System.Drawing.Point(3, 420);
+            this.btnQuery7.Location = new System.Drawing.Point(3, 443);
             this.btnQuery7.Name = "btnQuery7";
             this.btnQuery7.Size = new System.Drawing.Size(188, 32);
             this.btnQuery7.TabIndex = 7;
@@ -204,7 +202,7 @@ namespace Presentacion.LabNetPractica4
             this.btnQuery6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnQuery6.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnQuery6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnQuery6.Location = new System.Drawing.Point(3, 382);
+            this.btnQuery6.Location = new System.Drawing.Point(3, 405);
             this.btnQuery6.Name = "btnQuery6";
             this.btnQuery6.Size = new System.Drawing.Size(188, 32);
             this.btnQuery6.TabIndex = 6;
@@ -221,7 +219,7 @@ namespace Presentacion.LabNetPractica4
             this.btnQuery5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnQuery5.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnQuery5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnQuery5.Location = new System.Drawing.Point(3, 344);
+            this.btnQuery5.Location = new System.Drawing.Point(3, 367);
             this.btnQuery5.Name = "btnQuery5";
             this.btnQuery5.Size = new System.Drawing.Size(188, 32);
             this.btnQuery5.TabIndex = 5;
@@ -238,7 +236,7 @@ namespace Presentacion.LabNetPractica4
             this.btnQuery4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnQuery4.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnQuery4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnQuery4.Location = new System.Drawing.Point(3, 306);
+            this.btnQuery4.Location = new System.Drawing.Point(3, 329);
             this.btnQuery4.Name = "btnQuery4";
             this.btnQuery4.Size = new System.Drawing.Size(188, 32);
             this.btnQuery4.TabIndex = 4;
@@ -255,7 +253,7 @@ namespace Presentacion.LabNetPractica4
             this.btnQuery3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnQuery3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnQuery3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnQuery3.Location = new System.Drawing.Point(3, 268);
+            this.btnQuery3.Location = new System.Drawing.Point(3, 291);
             this.btnQuery3.Name = "btnQuery3";
             this.btnQuery3.Size = new System.Drawing.Size(188, 32);
             this.btnQuery3.TabIndex = 3;
@@ -272,7 +270,7 @@ namespace Presentacion.LabNetPractica4
             this.btnQuery2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnQuery2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnQuery2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnQuery2.Location = new System.Drawing.Point(3, 230);
+            this.btnQuery2.Location = new System.Drawing.Point(3, 253);
             this.btnQuery2.Name = "btnQuery2";
             this.btnQuery2.Size = new System.Drawing.Size(188, 32);
             this.btnQuery2.TabIndex = 2;
@@ -289,13 +287,20 @@ namespace Presentacion.LabNetPractica4
             this.btnQuery1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnQuery1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnQuery1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnQuery1.Location = new System.Drawing.Point(3, 192);
+            this.btnQuery1.Location = new System.Drawing.Point(3, 215);
             this.btnQuery1.Name = "btnQuery1";
             this.btnQuery1.Size = new System.Drawing.Size(188, 32);
             this.btnQuery1.TabIndex = 1;
             this.btnQuery1.Text = "1";
             this.btnQuery1.UseVisualStyleBackColor = false;
             this.btnQuery1.Click += new System.EventHandler(this.btnQuery1_Click);
+            // 
+            // pnlQuery
+            // 
+            this.pnlQuery.Location = new System.Drawing.Point(205, 4);
+            this.pnlQuery.Name = "pnlQuery";
+            this.pnlQuery.Size = new System.Drawing.Size(932, 641);
+            this.pnlQuery.TabIndex = 5;
             // 
             // imgLogo
             // 
@@ -327,21 +332,6 @@ namespace Presentacion.LabNetPractica4
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
-            // dgvResults
-            // 
-            this.dgvResults.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvResults.Location = new System.Drawing.Point(205, 346);
-            this.dgvResults.Name = "dgvResults";
-            this.dgvResults.Size = new System.Drawing.Size(932, 337);
-            this.dgvResults.TabIndex = 4;
-            // 
-            // pnlQuery
-            // 
-            this.pnlQuery.Location = new System.Drawing.Point(205, 4);
-            this.pnlQuery.Name = "pnlQuery";
-            this.pnlQuery.Size = new System.Drawing.Size(932, 335);
-            this.pnlQuery.TabIndex = 5;
-            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -349,13 +339,11 @@ namespace Presentacion.LabNetPractica4
             this.ClientSize = new System.Drawing.Size(1141, 731);
             this.ControlBox = false;
             this.Controls.Add(this.pnlQuery);
-            this.Controls.Add(this.dgvResults);
             this.Controls.Add(this.pnlBotonera);
             this.Controls.Add(this.btnSalir);
             this.Name = "frmPrincipal";
             this.pnlBotonera.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvResults)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -378,7 +366,6 @@ namespace Presentacion.LabNetPractica4
         private System.Windows.Forms.Button btnQuery4;
         private System.Windows.Forms.Button btnQuery3;
         private System.Windows.Forms.Button btnQuery2;
-        private System.Windows.Forms.DataGridView dgvResults;
         private System.Windows.Forms.Panel pnlQuery;
     }
 }
