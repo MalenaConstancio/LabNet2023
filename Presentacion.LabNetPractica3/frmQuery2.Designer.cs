@@ -65,7 +65,7 @@ namespace Presentacion.LabNetPractica3
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(846, 40);
             this.btnBuscar.TabIndex = 9;
-            this.btnBuscar.Text = "TRAER PRODUCTOS SIN STOCK";
+            this.btnBuscar.Text = "PROBAR";
             this.btnBuscar.UseVisualStyleBackColor = false;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 

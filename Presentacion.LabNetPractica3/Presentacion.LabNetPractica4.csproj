@@ -83,6 +83,12 @@
     <Compile Include="frmQuery4.Designer.cs">
       <DependentUpon>frmQuery4.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmQuery5.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmQuery5.Designer.cs">
+      <DependentUpon>frmQuery5.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmPrincipal.resx">
@@ -99,6 +105,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmQuery4.resx">
       <DependentUpon>frmQuery4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmQuery5.resx">
+      <DependentUpon>frmQuery5.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

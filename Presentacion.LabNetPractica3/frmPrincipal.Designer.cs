@@ -225,6 +225,7 @@ namespace Presentacion.LabNetPractica4
             this.btnQuery5.TabIndex = 5;
             this.btnQuery5.Text = "5";
             this.btnQuery5.UseVisualStyleBackColor = false;
+            this.btnQuery5.Click += new System.EventHandler(this.btnQuery5_Click);
             // 
             // btnQuery4
             // 

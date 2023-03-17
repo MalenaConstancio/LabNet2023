@@ -17,6 +17,12 @@ namespace Negocio.LabNetPractica3
             return lstProd;
         }
 
+        public Products GetFirstOrNull()
+        {
+            Products prod =daoProd.GetFirstOrNull();
+            return prod;
+        }
+
         public IQueryable<Products> GetProductsWhitoutStockMethod()
         {
             IQueryable<Products> entity= daoProd.GetProductsWhitoutStockMethod();

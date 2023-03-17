@@ -13,5 +13,6 @@ namespace Negocio.LabNetPractica3
          IQueryable<Products> GetProductsWhitoutStockSintax();
          IQueryable<Products> GetProductsWhitStockUnitPriceGreaterThan3Method();
          IQueryable<Products> GetProductsWhitStockUnitPriceGreaterThan3Sintax();
+         Products GetFirstOrNull();
     }
 }

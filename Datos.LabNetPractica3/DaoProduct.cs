@@ -58,5 +58,11 @@ namespace Datos.LabNetPractica3
             IQueryable<Products> queryProducts = db.Products.Select(p => p).Where(p => p.UnitsInStock != 0).Where(p => p.UnitPrice>3);
             return queryProducts;
         }
+
+        public Products GetFirstOrNull()
+        {
+            Products prod = db.Products.Select(p => p).FirstOrDefault();
+            return prod;
+        }
     }
 }
