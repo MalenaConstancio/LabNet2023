@@ -259,6 +259,7 @@ namespace Presentacion.LabNetPractica4
             this.btnQuery3.TabIndex = 3;
             this.btnQuery3.Text = "3";
             this.btnQuery3.UseVisualStyleBackColor = false;
+            this.btnQuery3.Click += new System.EventHandler(this.btnQuery3_Click);
             // 
             // btnQuery2
             // 
@@ -324,7 +325,7 @@ namespace Presentacion.LabNetPractica4
             this.btnSalir.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnSalir.Image = ((System.Drawing.Image)(resources.GetObject("btnSalir.Image")));
             this.btnSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSalir.Location = new System.Drawing.Point(1049, 689);
+            this.btnSalir.Location = new System.Drawing.Point(1041, 680);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(88, 39);
             this.btnSalir.TabIndex = 3;

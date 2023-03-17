@@ -29,5 +29,18 @@ namespace Negocio.LabNetPractica3
             IQueryable<Products> entity = daoProd.GetProductsWhitoutStockSintax();
             return entity;
         }
+
+        public IQueryable<Products> GetProductsWhitStockUnitPriceGreaterThan3Method()
+        {
+            IQueryable<Products> entity = daoProd.GetProductsWhitStockUnitPriceGreaterThan3Method();
+            return entity;
+        }
+
+        public IQueryable<Products> GetProductsWhitStockUnitPriceGreaterThan3Sintax()
+        {
+
+            IQueryable<Products> entity = daoProd.GetProductsWhitStockUnitPriceGreaterThan3Sintax();
+            return entity;
+        }
     }
 }

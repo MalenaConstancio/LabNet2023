@@ -50,5 +50,11 @@ namespace Presentacion.LabNetPractica4
             AbrirForm(form);
 
         }
+
+        private void btnQuery3_Click(object sender, EventArgs e)
+        {
+            frmQuery3 form = new frmQuery3();
+            AbrirForm(form);
+        }
     }
 }

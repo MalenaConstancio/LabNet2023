@@ -43,5 +43,20 @@ namespace Datos.LabNetPractica3
             List<Products> lstProducts = db.Products.Select(p => p).ToList();
             return lstProducts;
         }
+
+        public IQueryable<Products> GetProductsWhitStockUnitPriceGreaterThan3Sintax() {
+           
+            IQueryable<Products> queryProducts = from prod in db.Products
+                                                 where prod.UnitsInStock != 0  
+                                                 && prod.UnitPrice>3
+                                                 select prod;
+            return queryProducts;
+        }
+        public IQueryable<Products> GetProductsWhitStockUnitPriceGreaterThan3Method()
+        {
+
+            IQueryable<Products> queryProducts = db.Products.Select(p => p).Where(p => p.UnitsInStock != 0).Where(p => p.UnitPrice>3);
+            return queryProducts;
+        }
     }
 }
