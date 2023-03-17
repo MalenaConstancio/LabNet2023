@@ -31,13 +31,13 @@ namespace Datos.LabNetPractica3
             return queryCustomer;
         }
 
-        //public List<Customers> GetCustomerMethod(string idCustomer)
-        //{
+        public List<Customers> GetCustomerMethod(string idCustomer)
+        {
 
-        //    var queryCustomer = db.Customers.Select(e => e).Where(e => e.CustomerID = idCustomer).ToList();
+            var queryCustomer = db.Customers.Select(e => e).Where(e => e.CustomerID == idCustomer).ToList();
 
-        //    return queryCustomer;
-        //}
+            return queryCustomer;
+        }
 
         public List<Customers> GetAllCustomers()
         {

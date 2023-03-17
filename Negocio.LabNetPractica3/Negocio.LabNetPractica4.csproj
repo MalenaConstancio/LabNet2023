@@ -48,10 +48,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IBase.cs" />
     <Compile Include="ICustomer.cs" />
     <Compile Include="INCategories.cs" />
+    <Compile Include="IProducts.cs" />
     <Compile Include="NCategories.cs" />
     <Compile Include="NCustomer.cs" />
+    <Compile Include="NProducts.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

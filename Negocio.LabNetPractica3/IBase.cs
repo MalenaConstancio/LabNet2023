@@ -4,12 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Datos.LabNetPractica4
+namespace Negocio.LabNetPractica3
 {
-    public interface IDaoBase<T>
+    public interface IBase<T>
     {
-
-   
+        List<T> GetAll();
 
     }
 }

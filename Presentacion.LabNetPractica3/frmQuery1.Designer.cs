@@ -76,7 +76,7 @@ namespace Presentacion.LabNetPractica3
             // dgvCustomer
             // 
             this.dgvCustomer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCustomer.Location = new System.Drawing.Point(12, 345);
+            this.dgvCustomer.Location = new System.Drawing.Point(12, 333);
             this.dgvCustomer.Name = "dgvCustomer";
             this.dgvCustomer.Size = new System.Drawing.Size(892, 251);
             this.dgvCustomer.TabIndex = 4;
@@ -86,7 +86,7 @@ namespace Presentacion.LabNetPractica3
             this.lblQuery1.AutoSize = true;
             this.lblQuery1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblQuery1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lblQuery1.Location = new System.Drawing.Point(23, 55);
+            this.lblQuery1.Location = new System.Drawing.Point(12, 34);
             this.lblQuery1.Name = "lblQuery1";
             this.lblQuery1.Size = new System.Drawing.Size(272, 18);
             this.lblQuery1.TabIndex = 6;
@@ -120,7 +120,7 @@ namespace Presentacion.LabNetPractica3
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnClose.Image = global::Presentacion.LabNetPractica3.Properties.Resources.iconoClose;
-            this.btnClose.Location = new System.Drawing.Point(873, 3);
+            this.btnClose.Location = new System.Drawing.Point(864, 12);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(40, 40);
             this.btnClose.TabIndex = 0;

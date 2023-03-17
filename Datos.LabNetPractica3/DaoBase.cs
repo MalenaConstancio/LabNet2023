@@ -14,9 +14,6 @@ namespace Datos.LabNetPractica4
             _context = new NorthwindContext();
         }
 
-       
-
-        
-   
+      
     }
 }

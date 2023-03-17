@@ -66,6 +66,7 @@
     <Compile Include="DaoBase.cs" />
     <Compile Include="DaoCategories.cs" />
     <Compile Include="DaoCustomer.cs" />
+    <Compile Include="DaoProduct.cs" />
     <Compile Include="IDaoBase.cs" />
     <Compile Include="NorthwindContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -44,11 +44,15 @@ namespace Presentacion.LabNetPractica3
             dgvCustomer.DataSource = negCust.GetAllCustomers();
         }
 
+        //Filtro dinámico trae los customers a medida que se va escribiendo en el textbox ,
+        //se deben agregar antes las columnas al dgv para probarlo.
         //private void txtIdCustomer_TextChanged(object sender, EventArgs e)
         //{
+        //    btnRefresh.Visible=false;
+        //    btnBuscar.Visible=false;
         //    List<Customers> lstCustomers = new List<Customers>();
         //    lstCustomers = negCust.GetAllCustomers();
-            
+
         //    if (txtIdCustomer.Text != "")
         //    {
         //        string seleccionado = txtIdCustomer.Text.ToLower();
