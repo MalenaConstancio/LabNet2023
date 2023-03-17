@@ -28,9 +28,23 @@ namespace Presentacion.LabNetPractica3
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             string idCustomer = txtIdCustomer.Text;
-            List<Customers> selected = negCust.GetCustomerSintax(idCustomer).ToList();
-            dgvCustomer.DataSource = selected;
-            txtIdCustomer.Text = " ";
+            try
+            {
+                List<Customers> selected = negCust.GetCustomerSintax(idCustomer).ToList();
+                if (selected.Count != 0)
+                {
+                    dgvCustomer.DataSource = selected;
+                    txtIdCustomer.Text = " ";
+                }
+                else {
+                    MessageBox.Show("No existe el Id ingresado", "IMPORTANTE", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtIdCustomer.Text = " ";
+                }
+                
+            }
+            catch (Exception) {
+                MessageBox.Show("No existe el Id ingresado", "IMPORTANTE", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
         }
 
@@ -44,39 +58,5 @@ namespace Presentacion.LabNetPractica3
             dgvCustomer.DataSource = negCust.GetAllCustomers();
         }
 
-        //Filtro dinámico trae los customers a medida que se va escribiendo en el textbox ,
-        //se deben agregar antes las columnas al dgv para probarlo.
-        //private void txtIdCustomer_TextChanged(object sender, EventArgs e)
-        //{
-        //    btnRefresh.Visible=false;
-        //    btnBuscar.Visible=false;
-        //    List<Customers> lstCustomers = new List<Customers>();
-        //    lstCustomers = negCust.GetAllCustomers();
-
-        //    if (txtIdCustomer.Text != "")
-        //    {
-        //        string seleccionado = txtIdCustomer.Text.ToLower();
-        //        dgvCustomer.Rows.Clear();
-
-        //        foreach (Customers c in lstCustomers)
-        //        {
-        //            bool x = c.CustomerID.ToLower().Contains(seleccionado);
-        //            if (x)
-        //            {
-        //                dgvCustomer.Rows.Add(new object[] { c.CustomerID,c.CompanyName,c.ContactName,c.CompanyName,c.ContactTitle,
-        //                c.Address,c.City,c.Region,c.PostalCode,c.Country,c.Phone,c.Fax});
-        //            }
-        //        }
-        //    }
-        //    else
-        //    {
-        //        dgvCustomer.Rows.Clear();
-        //        foreach (Customers c in lstCustomers)
-        //        {
-        //            dgvCustomer.Rows.Add(new object[] { c.CustomerID,c.CompanyName,c.ContactName,c.CompanyName,c.ContactTitle,
-        //                c.Address,c.City,c.Region,c.PostalCode,c.Country,c.Phone,c.Fax});
-        //        }
-        //    }
-        //}
     }
 }
