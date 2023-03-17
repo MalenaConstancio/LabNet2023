@@ -1,4 +1,5 @@
-﻿using Negocio.LabNetPractica3;
+﻿using Entidades.LabNetPractica4;
+using Negocio.LabNetPractica3;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -24,10 +25,7 @@ namespace Presentacion.LabNetPractica3
             this.Close();
         }
 
-        private void btnBuscar_Click(object sender, EventArgs e)
-        {
-            dgvProduct.DataSource = negPRod.GetFirstOrNull();
-        }
+   
 
         private void frmQuery5_Load(object sender, EventArgs e)
         {
@@ -37,6 +35,36 @@ namespace Presentacion.LabNetPractica3
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             dgvProduct.DataSource = negPRod.GetAll();
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            int id=0;
+            try
+            {
+                 id = Convert.ToInt32(txtIdProduct.Text);
+
+                Products p = negPRod.GetFirstOrNull(id);
+                if (p != null)
+                {
+                    List<Products> lstUnProducto = new List<Products>();
+                    lstUnProducto.Add(p);
+                    dgvProduct.DataSource = lstUnProducto;
+                    txtIdProduct.Text = " ";
+                }
+                else
+                {
+                    MessageBox.Show("No existe el Id ingresado", "IMPORTANTE", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtIdProduct.Text = " ";
+                }
+            }
+            catch (Exception) {
+                MessageBox.Show("Verifique el formato del Id ingresado", "IMPORTANTE", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtIdProduct.Text = " ";
+            }
+           
+          
+            
         }
     }
 }

@@ -17,9 +17,9 @@ namespace Negocio.LabNetPractica3
             return lstProd;
         }
 
-        public Products GetFirstOrNull()
+        public Products GetFirstOrNull(int id)
         {
-            Products prod =daoProd.GetFirstOrNull();
+            Products prod =daoProd.GetFirstOrNull(id);
             return prod;
         }
 

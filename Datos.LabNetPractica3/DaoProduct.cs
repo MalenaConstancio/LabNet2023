@@ -59,9 +59,9 @@ namespace Datos.LabNetPractica3
             return queryProducts;
         }
 
-        public Products GetFirstOrNull()
+        public Products GetFirstOrNull(int id)
         {
-            Products prod = db.Products.Select(p => p).FirstOrDefault();
+            Products prod = db.Products.Select(p => p).Where(p => p.ProductID == id).FirstOrDefault();
             return prod;
         }
     }

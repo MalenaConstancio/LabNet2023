@@ -71,7 +71,7 @@ namespace Presentacion.LabNetPractica3
             this.groupBox1.Size = new System.Drawing.Size(165, 53);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Customer";
+            this.groupBox1.Text = "Cliente";
             // 
             // dgvCustomer
             // 

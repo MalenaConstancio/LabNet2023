@@ -32,9 +32,13 @@ namespace Presentacion.LabNetPractica3
             this.btnClose = new System.Windows.Forms.Button();
             this.lblQuery1 = new System.Windows.Forms.Label();
             this.dgvProduct = new System.Windows.Forms.DataGridView();
-            this.btnBuscar = new System.Windows.Forms.Button();
             this.btnRefresh = new System.Windows.Forms.Button();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtIdProduct = new System.Windows.Forms.TextBox();
+            this.lblId = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnClose
@@ -70,29 +74,59 @@ namespace Presentacion.LabNetPractica3
             this.dgvProduct.Size = new System.Drawing.Size(892, 251);
             this.dgvProduct.TabIndex = 9;
             // 
-            // btnBuscar
-            // 
-            this.btnBuscar.BackColor = System.Drawing.SystemColors.Control;
-            this.btnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscar.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btnBuscar.Location = new System.Drawing.Point(12, 299);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(846, 40);
-            this.btnBuscar.TabIndex = 11;
-            this.btnBuscar.Text = "PROBAR";
-            this.btnBuscar.UseVisualStyleBackColor = false;
-            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
-            // 
             // btnRefresh
             // 
             this.btnRefresh.BackColor = System.Drawing.SystemColors.Control;
             this.btnRefresh.Image = global::Presentacion.LabNetPractica3.Properties.Resources.iconoRefresh;
-            this.btnRefresh.Location = new System.Drawing.Point(864, 299);
+            this.btnRefresh.Location = new System.Drawing.Point(229, 296);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(40, 40);
             this.btnRefresh.TabIndex = 12;
             this.btnRefresh.UseVisualStyleBackColor = false;
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.BackColor = System.Drawing.SystemColors.Control;
+            this.btnBuscar.Image = global::Presentacion.LabNetPractica3.Properties.Resources.iconoSearch1;
+            this.btnBuscar.Location = new System.Drawing.Point(183, 296);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(40, 40);
+            this.btnBuscar.TabIndex = 14;
+            this.btnBuscar.UseVisualStyleBackColor = false;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.txtIdProduct);
+            this.groupBox1.Controls.Add(this.lblId);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.groupBox1.Location = new System.Drawing.Point(12, 286);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(165, 53);
+            this.groupBox1.TabIndex = 13;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Producto";
+            // 
+            // txtIdProduct
+            // 
+            this.txtIdProduct.Location = new System.Drawing.Point(40, 19);
+            this.txtIdProduct.Name = "txtIdProduct";
+            this.txtIdProduct.Size = new System.Drawing.Size(100, 21);
+            this.txtIdProduct.TabIndex = 2;
+            // 
+            // lblId
+            // 
+            this.lblId.AutoSize = true;
+            this.lblId.BackColor = System.Drawing.SystemColors.Control;
+            this.lblId.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblId.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lblId.Location = new System.Drawing.Point(11, 20);
+            this.lblId.Name = "lblId";
+            this.lblId.Size = new System.Drawing.Size(23, 15);
+            this.lblId.TabIndex = 1;
+            this.lblId.Text = " Id ";
             // 
             // frmQuery5
             // 
@@ -100,14 +134,17 @@ namespace Presentacion.LabNetPractica3
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(916, 625);
             this.ControlBox = false;
-            this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.btnBuscar);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.dgvProduct);
             this.Controls.Add(this.lblQuery1);
             this.Controls.Add(this.btnClose);
             this.Name = "frmQuery5";
             this.Load += new System.EventHandler(this.frmQuery5_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -118,7 +155,10 @@ namespace Presentacion.LabNetPractica3
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Label lblQuery1;
         private System.Windows.Forms.DataGridView dgvProduct;
-        private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Button btnRefresh;
+        private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.TextBox txtIdProduct;
+        private System.Windows.Forms.Label lblId;
     }
 }
