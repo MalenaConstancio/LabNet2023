@@ -1,4 +1,5 @@
-﻿using Entidades.LabNetPractica4;
+﻿using Entidades.LabNetPractica3;
+using Entidades.LabNetPractica4;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,5 +16,7 @@ namespace Negocio.LabNetPractica3
         List<Customers> GetCustomersNamesSintax();
         List<Customers> GetCustomersNamesMayusMethod();
         List<Customers> GetCustomersNamesLowerMethod();
+        List<CustomersDTO> GetCustomersWARegionAndOrdersAfter1997();
+        List<Customers> GetTop3CustomersWARegion();
     }
 }

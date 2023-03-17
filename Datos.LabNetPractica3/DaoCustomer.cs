@@ -1,7 +1,9 @@
 ﻿using Datos.LabNetPractica4;
+using Entidades.LabNetPractica3;
 using Entidades.LabNetPractica4;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity.SqlServer;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -114,5 +116,42 @@ namespace Datos.LabNetPractica3
 
             return lstCustomersNames;
         }
+
+        public List<CustomersDTO> GetCustomersWARegionAndOrdersAfter1997() {
+
+            DateTime fecha = new DateTime(1997, 1, 1);
+            var queryCustomer = db.Customers.Join(db.Orders,
+                                c => c.CustomerID,
+                                o => o.CustomerID,
+                                (c, o) => new
+                                    { c.CompanyName,
+                                      c.Region,
+                                      o.OrderID,
+                                      o.OrderDate
+                                    })
+                                    .Where(e => e.Region == "WA")
+                                    .Where(e => e.OrderDate > fecha);
+
+            List<CustomersDTO> lstCustomersNames = new List<CustomersDTO>();
+
+            foreach (var item in queryCustomer)
+            {
+                CustomersDTO c = new CustomersDTO();
+                c.CompanyName = item.CompanyName;
+                c.Region = item.Region;
+                c.OrderID = item.OrderID;
+                c.OrderDate = Convert.ToDateTime(item.OrderDate);
+                lstCustomersNames.Add(c);
+            }
+
+            return lstCustomersNames;
+        }
+
+        public List<Customers> GetTop3CustomersWARegion() {
+
+            var queryCustomer = db.Customers.Select(e => e).Where(e => e.Region == "WA").Take(3).ToList();
+            return queryCustomer;
+        }
+
     }
 }

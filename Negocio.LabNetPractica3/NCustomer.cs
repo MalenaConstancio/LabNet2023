@@ -1,4 +1,5 @@
 ﻿using Datos.LabNetPractica3;
+using Entidades.LabNetPractica3;
 using Entidades.LabNetPractica4;
 using System;
 using System.Collections.Generic;
@@ -44,6 +45,17 @@ namespace Negocio.LabNetPractica3
         public IQueryable<Customers> GetCustomersRegionWAMethod()
         {
             var lstCustomers = daoCus.GetCustomersRegionWAMethod();
+            return lstCustomers;
+        }
+
+        public List<CustomersDTO> GetCustomersWARegionAndOrdersAfter1997()
+        {
+            var lstCustomers=daoCus.GetCustomersWARegionAndOrdersAfter1997();
+            return lstCustomers;
+        }
+
+        public List<Customers> GetTop3CustomersWARegion() {
+            var lstCustomers = daoCus.GetTop3CustomersWARegion();
             return lstCustomers;
         }
     }

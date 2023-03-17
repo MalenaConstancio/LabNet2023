@@ -95,6 +95,18 @@
     <Compile Include="frmQuery6.Designer.cs">
       <DependentUpon>frmQuery6.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmQuery7.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmQuery7.Designer.cs">
+      <DependentUpon>frmQuery7.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmQuery8.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmQuery8.Designer.cs">
+      <DependentUpon>frmQuery8.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmPrincipal.resx">
@@ -117,6 +129,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmQuery6.resx">
       <DependentUpon>frmQuery6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmQuery7.resx">
+      <DependentUpon>frmQuery7.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmQuery8.resx">
+      <DependentUpon>frmQuery8.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

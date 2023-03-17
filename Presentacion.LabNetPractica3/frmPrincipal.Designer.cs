@@ -174,6 +174,7 @@ namespace Presentacion.LabNetPractica4
             this.btnQuery8.TabIndex = 8;
             this.btnQuery8.Text = "8";
             this.btnQuery8.UseVisualStyleBackColor = false;
+            this.btnQuery8.Click += new System.EventHandler(this.btnQuery8_Click);
             // 
             // btnQuery7
             // 
@@ -191,6 +192,7 @@ namespace Presentacion.LabNetPractica4
             this.btnQuery7.TabIndex = 7;
             this.btnQuery7.Text = "7";
             this.btnQuery7.UseVisualStyleBackColor = false;
+            this.btnQuery7.Click += new System.EventHandler(this.btnQuery7_Click);
             // 
             // btnQuery6
             // 
