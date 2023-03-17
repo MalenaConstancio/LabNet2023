@@ -23,6 +23,18 @@ namespace Negocio.LabNetPractica3
             return prod;
         }
 
+        public List<Products> GetOrderProductsList()
+        {
+            List<Products> lstProducts = daoProd.GetOrderProductsList();
+            return lstProducts;
+        }
+
+        public List<Products> GetOrderProductsListByStock()
+        {
+            List<Products> lstProducts = daoProd.GetOrderProductsListByStock();
+            return lstProducts;
+        }
+
         public IQueryable<Products> GetProductsWhitoutStockMethod()
         {
             IQueryable<Products> entity= daoProd.GetProductsWhitoutStockMethod();

@@ -64,5 +64,21 @@ namespace Datos.LabNetPractica3
             Products prod = db.Products.Select(p => p).Where(p => p.ProductID == id).FirstOrDefault();
             return prod;
         }
+
+        public List<Products> GetOrderProductsList() {
+
+            List<Products> queryProducts = db.Products.Select(p => p).OrderBy(p => p.ProductName).ToList();
+            return queryProducts;
+        }
+
+        public List<Products> GetOrderProductsListByStock()
+        {
+
+            List<Products> queryProducts = (from product in db.Products
+                                           orderby product.UnitsInStock descending
+                                           select product).ToList();
+            return queryProducts;
+        }
+
     }
 }
