@@ -12,5 +12,8 @@ namespace Negocio.LabNetPractica3
          List<Customers> GetAllCustomers();
         IQueryable<Customers> GetCustomerSintax(string idCustomer);
         IQueryable<Customers> GetCustomersRegionWAMethod();
+        List<Customers> GetCustomersNamesSintax();
+        List<Customers> GetCustomersNamesMayusMethod();
+        List<Customers> GetCustomersNamesLowerMethod();
     }
 }

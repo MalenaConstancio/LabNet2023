@@ -208,6 +208,7 @@ namespace Presentacion.LabNetPractica4
             this.btnQuery6.TabIndex = 6;
             this.btnQuery6.Text = "6";
             this.btnQuery6.UseVisualStyleBackColor = false;
+            this.btnQuery6.Click += new System.EventHandler(this.btnQuery6_Click);
             // 
             // btnQuery5
             // 

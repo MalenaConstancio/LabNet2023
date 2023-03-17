@@ -28,6 +28,7 @@ namespace Presentacion.LabNetPractica3
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             string idCustomer = txtIdCustomer.Text;
+            
             try
             {
                 List<Customers> selected = negCust.GetCustomerSintax(idCustomer).ToList();
@@ -43,7 +44,7 @@ namespace Presentacion.LabNetPractica3
                 
             }
             catch (Exception) {
-                MessageBox.Show("No existe el Id ingresado", "IMPORTANTE", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Verifique el formato del Id ingresado", "IMPORTANTE", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }

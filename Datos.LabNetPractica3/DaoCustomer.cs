@@ -39,6 +39,7 @@ namespace Datos.LabNetPractica3
             return queryCustomer;
         }
 
+
         public List<Customers> GetAllCustomers()
         {
             var queryCustomer = db.Customers.Select(e => e).ToList();
@@ -63,5 +64,55 @@ namespace Datos.LabNetPractica3
             return queryCustomer;
         }
 
+        public List<Customers> GetCustomersNamesSintax() {
+
+            var queryCustomer = from cust in db.Customers  
+                                select  cust.CompanyName;
+
+            List<Customers> lstCustomersNames = new List<Customers>();
+
+            foreach (var item in queryCustomer)
+            {
+                Customers c = new Customers();
+                c.CompanyName = item;
+                lstCustomersNames.Add(c);
+            }
+
+            return lstCustomersNames;
+        }
+        public List<Customers> GetCustomersNamesMayusMethod()
+        {
+            var queryCustomersMayuscula = db.Customers.Select(e => e.CompanyName);
+
+            List<Customers> lstCustomersNames = new List<Customers>();
+
+            foreach (var item in queryCustomersMayuscula)
+            {
+                Customers c = new Customers();
+                c.CompanyName = item.ToUpper();
+                lstCustomersNames.Add(c);
+            }
+
+
+            return lstCustomersNames;
+
+        }
+
+        public List<Customers> GetCustomersNamesLowerMethod()
+        {
+            var queryCustomersMayuscula = db.Customers.Select(e => e.CompanyName);
+
+            List<Customers> lstCustomersNames = new List<Customers>();
+
+            foreach (var item in queryCustomersMayuscula)
+            {
+                Customers c = new Customers();
+                c.CompanyName = item.ToLower();
+                lstCustomersNames.Add(c);
+            }
+
+
+            return lstCustomersNames;
+        }
     }
 }

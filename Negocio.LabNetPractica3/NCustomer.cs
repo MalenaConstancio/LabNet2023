@@ -23,6 +23,24 @@ namespace Negocio.LabNetPractica3
             return lstCustomers;
         }
 
+        public List<Customers> GetCustomersNamesLowerMethod()
+        {
+            var lstCustomersNamesLower = daoCus.GetCustomersNamesLowerMethod();
+            return lstCustomersNamesLower;
+        }
+
+        public List<Customers> GetCustomersNamesMayusMethod()
+        {
+            var lstCustomersNamesMayus = daoCus.GetCustomersNamesMayusMethod();
+            return lstCustomersNamesMayus;
+        }
+
+        public List<Customers> GetCustomersNamesSintax()
+        {
+            var lstCustomersNames = daoCus.GetCustomersNamesSintax();
+            return lstCustomersNames;
+        }
+
         public IQueryable<Customers> GetCustomersRegionWAMethod()
         {
             var lstCustomers = daoCus.GetCustomersRegionWAMethod();

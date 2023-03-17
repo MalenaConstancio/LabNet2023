@@ -56,6 +56,7 @@ namespace Presentacion.LabNetPractica3
             // txtIdCustomer
             // 
             this.txtIdCustomer.Location = new System.Drawing.Point(40, 19);
+            this.txtIdCustomer.MaxLength = 5;
             this.txtIdCustomer.Name = "txtIdCustomer";
             this.txtIdCustomer.Size = new System.Drawing.Size(100, 21);
             this.txtIdCustomer.TabIndex = 2;
