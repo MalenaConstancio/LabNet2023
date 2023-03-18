@@ -17,6 +17,18 @@ namespace Negocio.LabNetPractica3
             return lstProd;
         }
 
+        public List<Categories> GetCategories()
+        {
+            List<Categories> lstCategories = daoProd.GetCategories();
+            return lstCategories;
+        }
+
+        public Products GetFirst(List<Products> lst)
+        {
+            Products p = daoProd.GetFirst(lst);
+            return p;
+        }
+
         public Products GetFirstOrNull(int id)
         {
             Products prod =daoProd.GetFirstOrNull(id);

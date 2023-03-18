@@ -16,5 +16,7 @@ namespace Negocio.LabNetPractica3
          Products GetFirstOrNull(int id);
          List<Products> GetOrderProductsList();
         List<Products> GetOrderProductsListByStock();
+        List<Categories> GetCategories();
+        Products GetFirst(List<Products> lst);
     }
 }

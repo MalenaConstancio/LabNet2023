@@ -54,6 +54,7 @@
     <Compile Include="CustomersDTO.cs" />
     <Compile Include="Employees.cs" />
     <Compile Include="Orders.cs" />
+    <Compile Include="OrdersDTO.cs" />
     <Compile Include="Order_Details.cs" />
     <Compile Include="Products.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -65,6 +65,12 @@ namespace Datos.LabNetPractica3
             return prod;
         }
 
+        public Products GetFirst(List<Products> lst)
+        {
+            Products prod = lst.First();
+            return prod;
+        }
+
         public List<Products> GetOrderProductsList() {
 
             List<Products> queryProducts = db.Products.Select(p => p).OrderBy(p => p.ProductName).ToList();
@@ -78,6 +84,23 @@ namespace Datos.LabNetPractica3
                                            orderby product.UnitsInStock descending
                                            select product).ToList();
             return queryProducts;
+        }
+
+        public List<Categories> GetCategories() {
+
+            var queryProducts = (from p in db.Products
+                                join c in db.Categories on p.CategoryID equals c.CategoryID
+                                select  c.CategoryName).Distinct();
+
+            List<Categories> lstCategorias = new List<Categories>();
+            foreach (var item in queryProducts)
+            {
+                Categories c = new Categories();
+                c.CategoryName = item.ToString(); ;
+                lstCategorias.Add(c);
+            }
+
+            return lstCategorias;
         }
 
     }

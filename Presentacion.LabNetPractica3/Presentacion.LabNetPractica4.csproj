@@ -71,6 +71,24 @@
     <Compile Include="frmQuery10.Designer.cs">
       <DependentUpon>frmQuery10.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmQuery11.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmQuery11.Designer.cs">
+      <DependentUpon>frmQuery11.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmQuery12.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmQuery12.Designer.cs">
+      <DependentUpon>frmQuery12.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmQuery13.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmQuery13.Designer.cs">
+      <DependentUpon>frmQuery13.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmQuery2.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,6 +147,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmQuery10.resx">
       <DependentUpon>frmQuery10.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmQuery11.resx">
+      <DependentUpon>frmQuery11.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmQuery12.resx">
+      <DependentUpon>frmQuery12.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmQuery13.resx">
+      <DependentUpon>frmQuery13.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmQuery2.resx">
       <DependentUpon>frmQuery2.cs</DependentUpon>

@@ -58,5 +58,11 @@ namespace Negocio.LabNetPractica3
             var lstCustomers = daoCus.GetTop3CustomersWARegion();
             return lstCustomers;
         }
+
+        public List<OrdersDTO> GetTotalOrdersByCustomer()
+        {
+            var lst = daoCus.GetTotalOrdersByCustomer();
+            return lst;
+        }
     }
 }

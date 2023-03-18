@@ -18,5 +18,6 @@ namespace Negocio.LabNetPractica3
         List<Customers> GetCustomersNamesLowerMethod();
         List<CustomersDTO> GetCustomersWARegionAndOrdersAfter1997();
         List<Customers> GetTop3CustomersWARegion();
+        List<OrdersDTO> GetTotalOrdersByCustomer();
     }
 }

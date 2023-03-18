@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Datos.LabNetPractica3
 {
-    public class DaoCustomer:DaoBase<Customers>
+    public class DaoCustomer : DaoBase<Customers>
     {
 
         public DaoCustomer(NorthwindContext context)
@@ -24,7 +24,8 @@ namespace Datos.LabNetPractica3
 
         NorthwindContext db = new NorthwindContext();
 
-        public IQueryable<Customers> GetCustomerSintax(string idCustomer) {
+        public IQueryable<Customers> GetCustomerSintax(string idCustomer)
+        {
 
             var queryCustomer = from cust in db.Customers
                                 where cust.CustomerID == idCustomer
@@ -66,10 +67,11 @@ namespace Datos.LabNetPractica3
             return queryCustomer;
         }
 
-        public List<Customers> GetCustomersNamesSintax() {
+        public List<Customers> GetCustomersNamesSintax()
+        {
 
-            var queryCustomer = from cust in db.Customers  
-                                select  cust.CompanyName;
+            var queryCustomer = from cust in db.Customers
+                                select cust.CompanyName;
 
             List<Customers> lstCustomersNames = new List<Customers>();
 
@@ -117,18 +119,20 @@ namespace Datos.LabNetPractica3
             return lstCustomersNames;
         }
 
-        public List<CustomersDTO> GetCustomersWARegionAndOrdersAfter1997() {
+        public List<CustomersDTO> GetCustomersWARegionAndOrdersAfter1997()
+        {
 
             DateTime fecha = new DateTime(1997, 1, 1);
             var queryCustomer = db.Customers.Join(db.Orders,
                                 c => c.CustomerID,
                                 o => o.CustomerID,
                                 (c, o) => new
-                                    { c.CompanyName,
-                                      c.Region,
-                                      o.OrderID,
-                                      o.OrderDate
-                                    })
+                                {
+                                    c.CompanyName,
+                                    c.Region,
+                                    o.OrderID,
+                                    o.OrderDate
+                                })
                                     .Where(e => e.Region == "WA")
                                     .Where(e => e.OrderDate > fecha);
 
@@ -147,10 +151,37 @@ namespace Datos.LabNetPractica3
             return lstCustomersNames;
         }
 
-        public List<Customers> GetTop3CustomersWARegion() {
+        public List<Customers> GetTop3CustomersWARegion()
+        {
 
             var queryCustomer = db.Customers.Select(e => e).Where(e => e.Region == "WA").Take(3).ToList();
             return queryCustomer;
+        }
+
+        public List<OrdersDTO> GetTotalOrdersByCustomer()
+        {
+
+            var queryCustomer = db.Customers.Join(db.Orders,
+                                c => c.CustomerID,
+                                o => o.CustomerID,
+                                (c, o) => new
+                                {
+                                    c.CompanyName,
+                                    o.CustomerID,
+                                }).GroupBy(m => new { m.CustomerID, m.CompanyName });
+
+
+            List<OrdersDTO> lst = new List<OrdersDTO>();
+            foreach (var group in queryCustomer)
+            {
+
+                OrdersDTO oDto = new OrdersDTO();
+                oDto.CustomerID = group.Key.CustomerID;
+                oDto.CompanyName = group.Key.CompanyName;
+                oDto.TotalOrders = group.Count();
+                lst.Add(oDto);
+            }
+            return lst;
         }
 
     }
