@@ -5,20 +5,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div>
         <input type="submit" id="btnIniciar" value="JUGAR" onclick=""><br><br>
     </div>
-    <div>
-        <p id="numSorteado"></p><br>
-        <input type="text" id="numIngresado">
-        <input type="submit" id="btnEnviar"value="PROBAR"><br><br>
-        <input type="button"  id="btnReiniciar" ><br>
-        <p id="mensaje"></p><br>
-        <div>
-            <p id="score"></p>
-            <p id="highScore"></p>
+    <div class="fondo">
+        <div class="principal">
+            <p id="numSorteado"></p><br>
+            <input type="text" onkeypress="return validaNumericos(event)" id="numIngresado">
+            <input type="submit" id="btnEnviar"value="PROBAR"><br><br>
+            <input type="button"  id="btnReiniciar" ><br>
+            <p id="mensaje"></p><br>
+        
+            <div class="scores">
+                <p id="score"></p>
+                <p id="highScore"></p>
+            </div>
         </div>
     </div>
 

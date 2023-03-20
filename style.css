@@ -1,0 +1,20 @@
+.fondo{
+    height: 900px;
+    width: 900px;
+    background-image: url(backgroundJuego.jpg);
+    margin-left: 30%;
+    position: absolute;
+    border-radius:5% ;
+}
+.principal{
+    background-color: #440c9c;
+    position: relative;
+    margin: 15%;
+    height: 650px;
+    border-radius: 5%;
+}
+.scores{
+    background-color: #440c9c;
+    position: relative;
+    margin-top: 20%;
+}

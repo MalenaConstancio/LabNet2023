@@ -43,20 +43,22 @@ function IniciarJuego(){
 function NuevoJuego(){
     location.reload();
 }
+
+
+
 function AsignarNuevoScore(pista){
 
     score=Number(document.querySelector("#score").textContent);
 
     if(pista!="Adivinaste!" ){
-         let scoreActualizado=DescontarPuntos(score);
+        let scoreActualizado=DescontarPuntos(score);
+        if(scoreActualizado==0){
+            document.querySelector("#numIngresado").style.display="none";
+            document.querySelector("#btnEnviar").style.display="none";
+            document.querySelector("#mensaje").style.display="none";
+        }
  
-         if(scoreActualizado==0){
-             document.querySelector("#mensaje").textContent="Game Over!";
-             document.querySelector("#numIngresado").style.display="none";
-             document.querySelector("#btnEnviar").style.display="none";
-         }
- 
-         document.querySelector("#score").textContent=scoreActualizado;
+        document.querySelector("#score").textContent=scoreActualizado;
     }else{
          let nuevoScore = Number(document.querySelector("#score").textContent);
          let highScore=document.cookie;
@@ -72,6 +74,14 @@ function AsignarNuevoScore(pista){
 
 }
 //Eventos-->
+
+function validaNumericos(event) {
+    if(event.charCode >= 48 && event.charCode <= 57){
+      return true;
+     }
+     return false;        
+}
+
 document.querySelector("#btnIniciar").onclick = () => {
     IniciarJuego();
   }
@@ -90,3 +100,4 @@ document.querySelector("#btnEnviar").onclick = () => {
 document.querySelector("#btnReiniciar").onclick=()=>{
     NuevoJuego();
 }
+
