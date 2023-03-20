@@ -105,8 +105,7 @@ document.querySelector("#btnIniciar").onclick = () => {
     document.getElementById("principal").style.backgroundColor ="#450e9d";
     document.getElementById("btnReiniciar").style.visibility="visible";
     IniciarJuego();
-    var audio = document.getElementById("audioBegin");
-    audio.play();
+    
   }
 
 document.querySelector("#btnEnviar").onclick = () => {
