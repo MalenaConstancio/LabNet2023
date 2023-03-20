@@ -6,19 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div>
-        <input type="submit" id="btnIniciar" value="JUGAR" onclick=""><br><br>
-    </div>
     <div class="fondo">
         <div class="principal">
-            <p id="numSorteado"></p><br>
-            <input type="text" onkeypress="return validaNumericos(event)" id="numIngresado">
-            <input type="submit" id="btnEnviar"value="PROBAR"><br><br>
-            <input type="button"  id="btnReiniciar" ><br>
-            <p id="mensaje"></p><br>
-        
+            <input type="submit" id="btnIniciar" value="JUGAR" onclick=""><br><br>
+            <div id="juego">
+                <p id="numSorteado"></p><br>
+                <div id="ingresarNumero">
+                   
+                        <input type="text"  onkeypress="return validaNumericos(event)" id="numIngresado">
+                        <input type="submit" id="btnEnviar"value="PROBAR"><br><br>
+                    
+                    <p id="mensaje"></p><br>
+                </div>
+                <input type="button"  id="btnReiniciar" ><br>
+            </div>
             <div class="scores">
                 <p id="score"></p>
                 <p id="highScore"></p>

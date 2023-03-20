@@ -7,8 +7,10 @@ function SortearNumero(){
 
 
 function GenerarPista(numIngresado){
-  
-    if(numIngresado==numSorteado){
+    if(numIngresado==""){
+        mensaje="Ingresa un número" ;
+    }
+    else if(numIngresado==numSorteado){
         mensaje="Adivinaste!" ;
     }
     else if(numIngresado>numSorteado){
@@ -28,6 +30,8 @@ function DescontarPuntos(score){
 //Pantalla-->
 
 function IniciarJuego(){
+    document.querySelector("#juego").style.display="block";
+    document.querySelector("#btnIniciar").style.display="none";
     numSorteado=SortearNumero();
     let score=100;
 
@@ -37,6 +41,7 @@ function IniciarJuego(){
 
     document.querySelector("#score").textContent=score;
     document.querySelector("#numSorteado").textContent=numSorteado;
+    document.querySelector("#numSorteado").style.visibility="hidden";
     document.querySelector("#highScore").textContent=highScore;
 }
 
@@ -53,13 +58,15 @@ function AsignarNuevoScore(pista){
     if(pista!="Adivinaste!" ){
         let scoreActualizado=DescontarPuntos(score);
         if(scoreActualizado==0){
+            document.querySelector("#numSorteado").style.visibility="visible";
             document.querySelector("#numIngresado").style.display="none";
             document.querySelector("#btnEnviar").style.display="none";
             document.querySelector("#mensaje").style.display="none";
         }
  
         document.querySelector("#score").textContent=scoreActualizado;
-    }else{
+    }
+    else{
          let nuevoScore = Number(document.querySelector("#score").textContent);
          let highScore=document.cookie;
  
@@ -67,7 +74,7 @@ function AsignarNuevoScore(pista){
              document.cookie=nuevoScore;
              document.querySelector("#highScore").textContent=nuevoScore;
          }
- 
+         document.querySelector("#numSorteado").style.visibility="visible";
          document.querySelector("#numIngresado").style.display="none";
          document.querySelector("#btnEnviar").style.display="none";
     }

@@ -1,3 +1,4 @@
+
 .fondo{
     height: 900px;
     width: 900px;
@@ -13,8 +14,48 @@
     height: 650px;
     border-radius: 5%;
 }
+
 .scores{
     background-color: #440c9c;
     position: relative;
-    margin-top: 20%;
+    margin-top: 10%;
+    width: 400px;
+    margin-left: 20%;
+    border-radius: 20px;
+}
+#btnIniciar{
+    width: 300px;
+    height: 300px;
+    border-radius: 70%;
+    margin-left: 25%;
+    margin-top: 10%;
+    background-color: #f62fd0;
+    border: #7314ee;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 400;
+    font-size: 70px;
+    color: #fbe3b4;
+    border-style: solid;
+    border-width: 25px;
+}
+#juego{
+    display:none;
+}
+#numSorteado{
+    font-family: 'Rubik', sans-serif;
+    font-weight: 300;
+    font-size: 70px;
+    margin-left: 45%;
+    margin-bottom: 2%;
+    color: #fbe3b4;
+}
+
+#ingresarNumero{
+    font-family: 'Rubik', sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    color: #fbe3b4;
+    margin-top: 5%;
+    margin-left: 30%;
+
 }
