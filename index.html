@@ -11,24 +11,25 @@
     <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="fondo">
-        <div class="principal">
+    <div class="fondo"> 
+        <div class="principal" id="principal">
             <input type="submit" id="btnIniciar" value="JUGAR" onclick=""><br><br>
+            <img id="win" src="win-removebg.png">
+            <img id="gameover" src="gameover-removebg.png">
             <div id="juego">
-                <p id="numSorteado"></p><br>
+                <p id="numSorteado"></p>
+                <p id="instrucciones">INTENTA ADIVINAR UN NUMERO ENTERO ENTRE 1 Y 50</p>
                 <div id="ingresarNumero">
-                   
-                        <input type="text"  onkeypress="return validaNumericos(event)" id="numIngresado">
-                        <input type="submit" id="btnEnviar"value="PROBAR"><br><br>
-                    
-                    <p id="mensaje"></p><br>
+                        <input type="text"  onkeypress="return validaNumericos(event)" id="numIngresado" maxlength="2">
+                        <input type="submit" id="btnEnviar" value="►"><br>
                 </div>
-                <input type="button"  id="btnReiniciar" ><br>
+                <p id="mensaje"></p><br>
             </div>
-            <div class="scores">
-                <p id="score"></p>
-                <p id="highScore"></p>
+            <div class="scores" id="scores">
+                <p style="font-size: 20px;">SCORE</p><p id="score"></p>
+                <p  style="font-size: 20px;">HIGHSCORE</p> <p id="highScore"></p>
             </div>
+            <input type="button"  id="btnReiniciar" value="&#8634" ><br>
         </div>
     </div>
 

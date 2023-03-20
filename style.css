@@ -8,20 +8,29 @@
     border-radius:5% ;
 }
 .principal{
-    background-color: #440c9c;
+    background-color: initial;
     position: relative;
     margin: 15%;
-    height: 650px;
+    height: 380px;
     border-radius: 5%;
 }
 
 .scores{
+    display:flex;
+    justify-content: space-evenly;
+    align-items: center;
     background-color: #440c9c;
     position: relative;
-    margin-top: 10%;
+    margin-top: 20px;
     width: 400px;
     margin-left: 20%;
     border-radius: 20px;
+    visibility: hidden;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 300;
+    font-size: 30px;
+    color: #fbe3b4;
+  
 }
 #btnIniciar{
     width: 300px;
@@ -30,7 +39,7 @@
     margin-left: 25%;
     margin-top: 10%;
     background-color: #f62fd0;
-    border: #7314ee;
+    border:#450e9d;
     font-family: 'Rubik', sans-serif;
     font-weight: 400;
     font-size: 70px;
@@ -56,6 +65,72 @@
     font-size: 20px;
     color: #fbe3b4;
     margin-top: 5%;
-    margin-left: 30%;
+    margin-left:40%;
+}
 
+#numIngresado{
+    font-family: 'Rubik', sans-serif;
+    font-weight: 400;
+    font-size: 30px;
+    color: #7314ee;
+    background-color: #fbe3b4;
+    width: 100px;
+    border-radius: 10px;
+}
+
+#instrucciones{
+    font-family: 'Rubik', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    color: #fbe3b4;
+    margin-left: 9%;
+}
+
+#btnEnviar{
+    font-family: 'Rubik', sans-serif;
+    font-weight: 400;
+    font-size: 32px;
+    border: none;
+    background: transparent;
+    color: #f62fd0;
+}
+#mensaje{
+    margin-left: 30%;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    color: #fbe3b4;
+}
+#btnReiniciar{
+    visibility: hidden;
+    width: 100px;
+    height: 100px;
+    border-radius: 70%;
+    margin-left: 45%;
+    margin-top: 10px;
+    background-color: #fbe3b4;
+    border: #7314ee;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 600;
+    font-size: 50px;
+    color: #f62fd0;
+    border-style: solid;
+    border-width: 15px;
+}
+
+#win {
+    display: none;
+    position: relative;
+    margin-top: -150px;
+    width: 300px;
+    height: 300px;
+    margin-left: 25%;
+}
+#gameover{
+    display: none;
+    position: relative;
+    margin-top: -150px;
+    width: 300px;
+    height: 300px;
+    margin-left: 25%;
 }
