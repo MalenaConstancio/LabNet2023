@@ -134,3 +134,12 @@
     height: 300px;
     margin-left: 25%;
 }
+#audioGameover{
+    display: none;
+}
+#audioWin{
+    display: none;
+}
+#audioBegin{
+    display: none;
+}

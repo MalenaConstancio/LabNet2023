@@ -13,9 +13,9 @@
 <body>
     <div class="fondo"> 
         <div class="principal" id="principal">
-            <input type="submit" id="btnIniciar" value="JUGAR" onclick=""><br><br>
-            <img id="win" src="win-removebg.png">
-            <img id="gameover" src="gameover-removebg.png">
+            <input type="submit" id="btnIniciar" value="JUGAR" onclick=""><br><br><audio id="audioBegin" controls><source type="audio/mp3" src="begin.mp3"></audio>
+            <img id="win" src="win-removebg.png"><audio id="audioWin" controls><source type="audio/mp3" src="win.mp3"></audio>
+            <img id="gameover" src="gameover-removebg.png"><audio id="audioGameover" controls><source type="audio/wav" src="chicken.wav"></audio>
             <div id="juego">
                 <p id="numSorteado"></p>
                 <p id="instrucciones">INTENTA ADIVINAR UN NUMERO ENTERO ENTRE 1 Y 50</p>

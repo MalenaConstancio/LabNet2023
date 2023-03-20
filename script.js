@@ -30,6 +30,7 @@ function DescontarPuntos(score){
 //Pantalla-->
 
 function IniciarJuego(){
+    
     document.querySelector("#juego").style.display="block";
     document.querySelector("#btnIniciar").style.display="none";
    
@@ -58,6 +59,8 @@ function AsignarNuevoScore(pista){
     if(pista!="Adivinaste!" ){
         let scoreActualizado=DescontarPuntos(score);
         if(scoreActualizado==0){
+            var audio = document.getElementById("audioGameover");
+            audio.play();
             document.querySelector("#gameover").style.display="block";
             document.querySelector("#numSorteado").style.visibility="visible";
             document.querySelector("#numIngresado").style.display="none";
@@ -70,6 +73,8 @@ function AsignarNuevoScore(pista){
         document.querySelector("#score").textContent=scoreActualizado;
     }
     else{
+        var audio = document.getElementById("audioWin");
+        audio.play();
         let nuevoScore = Number(document.querySelector("#score").textContent);
         let highScore=document.cookie;
  
@@ -100,6 +105,8 @@ document.querySelector("#btnIniciar").onclick = () => {
     document.getElementById("principal").style.backgroundColor ="#450e9d";
     document.getElementById("btnReiniciar").style.visibility="visible";
     IniciarJuego();
+    var audio = document.getElementById("audioBegin");
+    audio.play();
   }
 
 document.querySelector("#btnEnviar").onclick = () => {
@@ -116,6 +123,7 @@ document.querySelector("#btnEnviar").onclick = () => {
 
 document.querySelector("#btnReiniciar").onclick=()=>{
     NuevoJuego();
+
 }
 
 
