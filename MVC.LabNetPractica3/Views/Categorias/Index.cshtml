@@ -8,33 +8,36 @@
     <title></title>
 </head>
 <body>
+    <br><br><br>
     <div>
         <table class="table table-responsive table-hover">
             <thead>
                 <tr>
-                    <th scope="col" style="display:none">ID</th>
+                    <th scope="col">@Html.Hidden("ID")</th>
                     <th scope="col">CATEGORIA</th>
                     <th scope="col">DESCRIPCION</th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
                 </tr>
             </thead>
             <tbody>
                 @foreach (var item in Model)
                 {
                     <tr>
-                        <td style="display:none">@item.IdCategoria</td>
+                        <td >@Html.Hidden("ID",@item.IdCategoria)</td>
                         <td>@item.NombreCategoria</td>
                         <td>@item.DescripcionCategoria</td>
+                        <td>@Html.ActionLink("EDITAR","Update", new {id=@item.IdCategoria})</td>
+                        <td>@Html.ActionLink("ELIMINAR", "Delete", new {id =@item.IdCategoria})</td>
                     </tr>
                 }
-
             </tbody>
 
         </table>
-    
+
     </div>
     <div>
-        @Html.ActionLink("AGREGAR NUEVA CATEGORIA","Insert")
-
+        @Html.ActionLink("AGREGAR NUEVA CATEGORIA", "Insert")
     </div>
 </body>
 </html>

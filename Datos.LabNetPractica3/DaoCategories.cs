@@ -84,6 +84,20 @@ namespace Datos.LabNetPractica3
             return _context.Categories.ToList();
         }
 
-     
+        public override Categories GetOne(Categories entity)
+        {
+            try
+            {
+                Categories categorieToUpdate = _context.Categories.Find(entity.CategoryID);
+                return categorieToUpdate;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            
+        }
+
+
     }
 }

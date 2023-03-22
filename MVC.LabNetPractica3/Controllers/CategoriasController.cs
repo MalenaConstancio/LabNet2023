@@ -39,20 +39,79 @@ namespace MVC.LabNetPractica3.Controllers
         [HttpPost]
         public ActionResult Insert(CategoriaViewModel catViewModel)
         {
-            try {
+            if (catViewModel.IdCategoria != 0)
+            {
+                try { 
+                    
+                    var cat = new Categories();
+                    cat.CategoryID = catViewModel.IdCategoria;
+                    cat.CategoryName = catViewModel.NombreCategoria;
+                    cat.Description = catViewModel.DescripcionCategoria;
+                    negCat.Update(cat);
+
+                    return RedirectToAction("Index");
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+            }
+            else
+            {
+                try
+                {
+                    var cat = new Categories();
+                    cat.CategoryName = catViewModel.NombreCategoria;
+                    cat.Description = catViewModel.DescripcionCategoria;
+                    negCat.Add(cat);
+
+                    return RedirectToAction("Index");
+                }
+                catch (Exception)
+                {
+
+                    throw; //Cambiarlo y mostrar alert en pantalla
+                }
+            }
+        }
+
+        public ActionResult Delete(int id)
+        {
+            try
+            {
                 var cat = new Categories();
-                cat.CategoryName = catViewModel.NombreCategoria;
-                cat.Description = catViewModel.DescripcionCategoria;
-                negCat.Add(cat);
+                cat.CategoryID = id;
+                negCat.Delete(cat);
 
                 return RedirectToAction("Index");
             }
-            catch (Exception) {
-
+            catch (Exception)
+            {
                 throw; //Cambiarlo y mostrar alert en pantalla
             }
         }
 
+       
+        public ActionResult Update(int id)
+        {
+            try
+            {
+                Categories cat = new Categories();
+                cat.CategoryID = id;
+                cat.CategoryName=  negCat.GetOne(cat).CategoryName;
+                cat.Description = negCat.GetOne(cat).Description;
+                var catViewModelEdit = new CategoriaViewModel();
+                catViewModelEdit.IdCategoria = cat.CategoryID;
+                catViewModelEdit.NombreCategoria = cat.CategoryName;
+                catViewModelEdit.DescripcionCategoria = cat.Description;
+
+                return View("Insert",catViewModelEdit);
+            }
+            catch (Exception)
+            {
+                throw; //Cambiarlo y mostrar alert en pantalla
+            }
+        }
       
     }
 }

@@ -65,6 +65,11 @@ namespace Datos.LabNetPractica3
             return _context.Suppliers.ToList();
         }
 
+        public override Suppliers GetOne(Suppliers entity)
+        {
+            throw new NotImplementedException();
+        }
+
         public override bool Update(Suppliers entity)
         {
             Suppliers supplierToUpdate = _context.Suppliers.Find(entity.SupplierID);

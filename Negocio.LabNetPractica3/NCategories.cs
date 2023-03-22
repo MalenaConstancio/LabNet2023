@@ -36,6 +36,12 @@ namespace Negocio.LabNetPractica3
             return lstCategorias;
         }
 
+        public Categories GetOne(Categories entity)
+        {
+            Categories cat = daoCat.GetOne(entity);
+            return cat;
+        }
+
         public bool Update(Categories entity)
         {
             if (daoCat.Update(entity)) {

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Entidades.LabNetPractica3;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,6 +17,6 @@ namespace Datos.LabNetPractica3
 
          bool Delete(T entity);
 
-        
+         T GetOne(T entity);
     }
 }
