@@ -1,0 +1,40 @@
+﻿@model List<MVC.LabNetPractica3.Models.CategoriaViewModel>
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body>
+    <div>
+        <table class="table table-responsive table-hover">
+            <thead>
+                <tr>
+                    <th scope="col" style="display:none">ID</th>
+                    <th scope="col">CATEGORIA</th>
+                    <th scope="col">DESCRIPCION</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td style="display:none">@item.IdCategoria</td>
+                        <td>@item.NombreCategoria</td>
+                        <td>@item.DescripcionCategoria</td>
+                    </tr>
+                }
+
+            </tbody>
+
+        </table>
+    
+    </div>
+    <div>
+        @Html.ActionLink("AGREGAR NUEVA CATEGORIA","Insert")
+
+    </div>
+</body>
+</html>

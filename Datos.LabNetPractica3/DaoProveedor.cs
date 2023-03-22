@@ -11,7 +11,7 @@ namespace Datos.LabNetPractica3
 {
     public class DaoProveedor : DaoBase<Suppliers>
     {
-        private NorthwindContext @object;
+       
 
         public DaoProveedor()
         {

@@ -1,0 +1,28 @@
+﻿@model MVC.LabNetPractica3.Models.CategoriaViewModel
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body>
+    <div>
+        @using(Html.BeginForm("Insert", "Categorias", FormMethod.Post)) {
+            <form>
+                <div class="form-group">
+                    <label for="inputNombreCategoria">Categoria</label>
+                    @Html.TextBoxFor(c=>c.NombreCategoria, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    <label for="inputDescripcionCategoria">Descripcion</label>
+                    @Html.TextBoxFor(c => c.DescripcionCategoria, new { @class = "form-control" })
+                </div>
+                <input type="submit" class="btn btn-primary" value="Aceptar"/>
+                <input type="button" class="btn btn-secundary" value="Cancelar" onclick=@"RedirectToAction("Index")"/>
+            </form>
+        }
+    </div>
+</body>
+</html>
