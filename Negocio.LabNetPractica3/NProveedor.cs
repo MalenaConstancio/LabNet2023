@@ -34,6 +34,12 @@ namespace Negocio.LabNetPractica3
             return lstProveedores;
         }
 
+        public Suppliers GetOne(int id)
+        {
+           Suppliers prov= daoProv.GetOne(id);
+            return prov;
+        }
+
         public bool Update(Suppliers entity)
         {
             if (daoProv.Update(entity))

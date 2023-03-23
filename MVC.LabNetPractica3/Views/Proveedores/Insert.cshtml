@@ -1,0 +1,41 @@
+﻿@model MVC.LabNetPractica3.Models.ProveedorViewModel
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body>
+    <div>
+        <br /> <br /> <br />
+        <div>
+            @using (Html.BeginForm("Insert", "Proveedores", FormMethod.Post))
+            {
+                <form>
+                    <div>
+                        @Html.HiddenFor(p => p.IdProveedor, new { @class = "form-control", @value = "Model.IdProveedor" })
+                    </div>
+                    <div class="form-group">
+                        <label for="inputNombreProveedor">Proveedor</label>
+                        @Html.EditorFor(p => p.NombreProveedor, new { @class = "form-control", @value = "Model.NombreProveedor" })
+                        @Html.ValidationMessageFor(p => p.NombreProveedor, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="form-group">
+                        <label for="inputCiudadProveedor">Ciudad</label>
+                        @Html.EditorFor(p => p.CiudadProveedor, new { @class = "form-control", @value = "Model.CiudadProveedor" })
+                        @Html.ValidationMessageFor(p => p.CiudadProveedor, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="form-group">
+                        <label for="inputTelefonoProveedor">Telefono</label>
+                        @Html.EditorFor(p => p.TelefonoProveedor, new { @class = "form-control", @value = "Model.TelefonoProveedor" })
+                        @Html.ValidationMessageFor(p => p.TelefonoProveedor, "", new { @class = "text-danger" })
+                    </div>
+                    <input type="submit" class="btn btn-primary" value="Aceptar" />
+                </form>
+            }
+        </div>
+    </div>
+</body>
+</html>

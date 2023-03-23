@@ -35,10 +35,7 @@ namespace MVC.LabNetPractica3.Controllers
             }
         }
 
-        public ActionResult Insert() {
 
-            return View();
-        }
        
         [HttpPost]
         public ActionResult Insert(CategoriaViewModel catViewModel)
@@ -107,7 +104,12 @@ namespace MVC.LabNetPractica3.Controllers
             }
         }
 
-       
+        public ActionResult Insert()
+        {
+
+            return View();
+        }
+
         public ActionResult Update(int id)
         {
             try

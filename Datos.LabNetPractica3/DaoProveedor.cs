@@ -72,7 +72,15 @@ namespace Datos.LabNetPractica3
 
         public override Suppliers GetOne(int  id)
         {
-            throw new NotImplementedException();
+            try
+            {
+                Suppliers provToUpdate = _context.Suppliers.Find(id);
+                return provToUpdate;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
 
         public override bool Update(Suppliers entity)
@@ -83,6 +91,7 @@ namespace Datos.LabNetPractica3
                 try
                 {
                     supplierToUpdate.CompanyName= entity.CompanyName;
+                    supplierToUpdate.City = entity.City;
                     supplierToUpdate.ContactName = entity.ContactName;
                     supplierToUpdate.Phone = entity.Phone;
                     _context.Entry(supplierToUpdate).State = System.Data.Entity.EntityState.Modified;
