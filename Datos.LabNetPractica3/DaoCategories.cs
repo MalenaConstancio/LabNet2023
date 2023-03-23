@@ -84,11 +84,11 @@ namespace Datos.LabNetPractica3
             return _context.Categories.ToList();
         }
 
-        public override Categories GetOne(Categories entity)
+        public override Categories GetOne(int id)
         {
             try
             {
-                Categories categorieToUpdate = _context.Categories.Find(entity.CategoryID);
+                Categories categorieToUpdate = _context.Categories.Find(id);
                 return categorieToUpdate;
             }
             catch (Exception)
@@ -98,6 +98,18 @@ namespace Datos.LabNetPractica3
             
         }
 
+        public override int GetMaxId()
+        {
+            try
+            {
+                int maxId = _context.Categories.Max(c => c.CategoryID); 
 
+                return maxId;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
     }
 }

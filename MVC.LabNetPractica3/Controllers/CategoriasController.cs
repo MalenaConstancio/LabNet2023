@@ -12,11 +12,12 @@ namespace MVC.LabNetPractica3.Controllers
     public class CategoriasController : Controller
     {
         INCategories negCat = new NCategories();
-        // GET: Categories
+    
         public ActionResult Index()
         {
             try
             {
+
                 var lstCategorias = negCat.GetAll();
                 List<CategoriaViewModel> lstCatViewModel = lstCategorias.Select(c => new CategoriaViewModel
                 {
@@ -26,8 +27,11 @@ namespace MVC.LabNetPractica3.Controllers
                 }).ToList();
                 return View(lstCatViewModel);
             }
-            catch (Exception) {
-                throw; //Cambiarlo y mostrar alert en pantalla
+            catch (Exception ex) {
+                ErrorModel errModel = new ErrorModel();
+                errModel.Mensaje = ex.Message;
+                errModel.InnerException = ex.InnerException.Message;
+                return View("Error",errModel);
             }
         }
 
@@ -35,42 +39,51 @@ namespace MVC.LabNetPractica3.Controllers
 
             return View();
         }
-
+       
         [HttpPost]
         public ActionResult Insert(CategoriaViewModel catViewModel)
         {
             if (catViewModel.IdCategoria != 0)
             {
                 try { 
-                    
-                    var cat = new Categories();
-                    cat.CategoryID = catViewModel.IdCategoria;
-                    cat.CategoryName = catViewModel.NombreCategoria;
-                    cat.Description = catViewModel.DescripcionCategoria;
-                    negCat.Update(cat);
-
+                    if(ModelState.IsValid){ 
+                        var cat = new Categories();
+                        cat.CategoryID = catViewModel.IdCategoria;
+                        cat.CategoryName = catViewModel.NombreCategoria;
+                        cat.Description = catViewModel.DescripcionCategoria;
+                        negCat.Update(cat);
+                    }
                     return RedirectToAction("Index");
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
-                    throw;
+                    ErrorModel errModel = new ErrorModel();
+                    errModel.Mensaje = ex.Message;
+                    errModel.InnerException = ex.InnerException.InnerException.Message;
+                    return View("Error", errModel);
                 }
             }
             else
-            {
+            {              
                 try
                 {
-                    var cat = new Categories();
-                    cat.CategoryName = catViewModel.NombreCategoria;
-                    cat.Description = catViewModel.DescripcionCategoria;
-                    negCat.Add(cat);
-
+                    ModelState.Remove("IdCategoria");
+                    if (ModelState.IsValid)
+                    {
+                        var cat = new Categories();
+                        cat.CategoryName = catViewModel.NombreCategoria;
+                        cat.Description = catViewModel.DescripcionCategoria;
+                        negCat.Add(cat);
+                    }
                     return RedirectToAction("Index");
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
+                    ErrorModel errModel = new ErrorModel();
+                    errModel.Mensaje = ex.Message;
+                    errModel.InnerException = ex.InnerException.InnerException.Message;
+                    return View("Error", errModel);
 
-                    throw; //Cambiarlo y mostrar alert en pantalla
                 }
             }
         }
@@ -85,9 +98,12 @@ namespace MVC.LabNetPractica3.Controllers
 
                 return RedirectToAction("Index");
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                throw; //Cambiarlo y mostrar alert en pantalla
+                ErrorModel errModel = new ErrorModel();
+                errModel.Mensaje = ex.Message;
+                errModel.InnerException = ex.InnerException.InnerException.Message;
+                return View("Error", errModel);
             }
         }
 
@@ -97,9 +113,8 @@ namespace MVC.LabNetPractica3.Controllers
             try
             {
                 Categories cat = new Categories();
-                cat.CategoryID = id;
-                cat.CategoryName=  negCat.GetOne(cat).CategoryName;
-                cat.Description = negCat.GetOne(cat).Description;
+                cat =  negCat.GetOne(id);
+                
                 var catViewModelEdit = new CategoriaViewModel();
                 catViewModelEdit.IdCategoria = cat.CategoryID;
                 catViewModelEdit.NombreCategoria = cat.CategoryName;
@@ -107,9 +122,12 @@ namespace MVC.LabNetPractica3.Controllers
 
                 return View("Insert",catViewModelEdit);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                throw; //Cambiarlo y mostrar alert en pantalla
+                ErrorModel errModel = new ErrorModel();
+                errModel.Mensaje = ex.Message;
+                errModel.InnerException = ex.InnerException.InnerException.Message;
+                return View("Error", errModel);
             }
         }
       

@@ -16,7 +16,9 @@ namespace Negocio.LabNetPractica3
         bool Update(Categories entity);
 
         bool Delete(Categories entity);
-        Categories GetOne(Categories entity);
+        Categories GetOne(int id);
+
+        int GetMaxId( );
 
 
 

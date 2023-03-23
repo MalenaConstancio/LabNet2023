@@ -65,7 +65,12 @@ namespace Datos.LabNetPractica3
             return _context.Suppliers.ToList();
         }
 
-        public override Suppliers GetOne(Suppliers entity)
+        public override int GetMaxId()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override Suppliers GetOne(int  id)
         {
             throw new NotImplementedException();
         }

@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@model MVC.LabNetPractica3.Models.ErrorModel
+<!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
@@ -9,6 +10,8 @@
     <hgroup>
         <h1>Error.</h1>
         <h2>Error al procesar la solicitud.</h2>
+        <h2>Detalle : @Model.Mensaje</h2>
+        <h2>@Model.InnerException</h2>
     </hgroup>
 </body>
 </html>

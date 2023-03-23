@@ -28,7 +28,7 @@
                         <td>@item.NombreCategoria</td>
                         <td>@item.DescripcionCategoria</td>
                         <td>@Html.ActionLink("EDITAR","Update", new {id=@item.IdCategoria})</td>
-                        <td>@Html.ActionLink("ELIMINAR", "Delete", new {id =@item.IdCategoria})</td>
+                        <td>@Html.ActionLink("ELIMINAR", "Delete", new { id = @item.IdCategoria }, new { @onclick = "return confirm('¿Está seguro que desea continuar?')" })</td>
                     </tr>
                 }
             </tbody>

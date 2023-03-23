@@ -36,9 +36,15 @@ namespace Negocio.LabNetPractica3
             return lstCategorias;
         }
 
-        public Categories GetOne(Categories entity)
+        public int GetMaxId( )
         {
-            Categories cat = daoCat.GetOne(entity);
+            int maxId = daoCat.GetMaxId();
+            return maxId;
+        }
+
+        public Categories GetOne(int id)
+        {
+            Categories cat = daoCat.GetOne(id);
             return cat;
         }
 

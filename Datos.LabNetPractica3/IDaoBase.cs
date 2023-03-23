@@ -17,6 +17,7 @@ namespace Datos.LabNetPractica3
 
          bool Delete(T entity);
 
-         T GetOne(T entity);
+         T GetOne(int id);
+        int GetMaxId();
     }
 }

@@ -134,6 +134,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\CategoriaViewModel.cs" />
+    <Compile Include="Models\ErrorModel.cs" />
     <Compile Include="Models\ProductoViewModel.cs" />
     <Compile Include="Models\ProveedorViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
