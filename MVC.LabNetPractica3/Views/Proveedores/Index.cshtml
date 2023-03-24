@@ -5,11 +5,19 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="~/Content/Style.css">
     <title></title>
 </head>
 <body>
+    <br />  <br />  <br />
     <div>
-        <table class="table table-responsive table-hover">
+        @Html.ActionLink("AGREGAR NUEVO PROVEEDOR", "Insert", "", new { @class = "btn btn-success" })
+    </div>
+    <br />  <br />  <br />
+    <div>*Solo puede eliminar Proveedores que aún no tengan Productos asignados.</div>
+    <br /> <br />
+    <div>
+        <table class="table table-responsive table-hover table-sm">
             <thead>
                 <tr>
                     <th scope="col">@Html.Hidden("ID")</th>
@@ -28,8 +36,8 @@
                         <td>@item.NombreProveedor</td>
                         <td>@item.CiudadProveedor</td>
                         <td>@item.TelefonoProveedor</td>
-                        <td>@Html.ActionLink("EDITAR", "Update", new { id = @item.IdProveedor })</td>
-                        <td>@Html.ActionLink("ELIMINAR", "Delete", new { id = @item.IdProveedor }, new { @onclick = "return confirm('¿Está seguro que desea continuar?')" })</td>
+                        <td>@Html.ActionLink("EDITAR", "Update", new { id = @item.IdProveedor }, new { @class = "btn btn-default " })</td>
+                        <td>@Html.ActionLink("ELIMINAR", "Delete", new { id = @item.IdProveedor }, new { @onclick = "return confirm('¿Está seguro que desea continuar?')", @class = "btn btn-danger" })</td>
                     </tr>
                 }
             </tbody>
@@ -37,8 +45,6 @@
         </table>
 
     </div>
-    <div>
-        @Html.ActionLink("AGREGAR NUEVO PROVEEDOR", "Insert")
-    </div>
+
 </body>
 </html>

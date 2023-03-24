@@ -5,6 +5,8 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="~/Content/Style.css">
+
     <title></title>
 </head>
 <body>
@@ -25,7 +27,7 @@
                                 <label for="inputDescripcionCategoria">Descripcion</label>
                                 @Html.EditorFor(c => c.DescripcionCategoria, new { @class = "form-control", @value = "Model.DescripcionCategoria" })
                             </div>
-                            <input type="submit" class="btn btn-primary" value="Aceptar"/>
+                            <input type="submit" class="btn btn-success" value="ACEPTAR"/>
                         </form>
                     }             
             </div>

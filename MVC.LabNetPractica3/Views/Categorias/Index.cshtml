@@ -5,12 +5,19 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="~/Content/Style.css">
     <title></title>
 </head>
 <body>
     <br><br><br>
     <div>
-        <table class="table table-responsive table-hover">
+        @Html.ActionLink("AGREGAR NUEVA CATEGORIA", "Insert", "", new { @class = "btn btn-success" })
+    </div>
+    <br><br><br>
+    <div>*Solo puede eliminar Categorias que aún no tengan Productos asignados.</div>
+    <br><br>
+    <div>
+        <table class="table table-responsive table-hover table-sm">
             <thead>
                 <tr>
                     <th scope="col">@Html.Hidden("ID")</th>
@@ -24,11 +31,11 @@
                 @foreach (var item in Model)
                 {
                     <tr>
-                        <td >@Html.Hidden("ID",@item.IdCategoria)</td>
+                        <td>@Html.Hidden("ID", @item.IdCategoria)</td>
                         <td>@item.NombreCategoria</td>
                         <td>@item.DescripcionCategoria</td>
-                        <td>@Html.ActionLink("EDITAR","Update", new {id=@item.IdCategoria})</td>
-                        <td>@Html.ActionLink("ELIMINAR", "Delete", new { id = @item.IdCategoria }, new { @onclick = "return confirm('¿Está seguro que desea continuar?')" })</td>
+                        <td>@Html.ActionLink("EDITAR", "Update", new { id = @item.IdCategoria }, new { @class = "btn btn-default " })</td>
+                        <td>@Html.ActionLink("ELIMINAR", "Delete", new { id = @item.IdCategoria }, new { @onclick = "return confirm('¿Está seguro que desea continuar?')", @class = "btn btn-danger" })</td>
                     </tr>
                 }
             </tbody>
@@ -36,8 +43,6 @@
         </table>
 
     </div>
-    <div>
-        @Html.ActionLink("AGREGAR NUEVA CATEGORIA", "Insert")
-    </div>
+
 </body>
 </html>

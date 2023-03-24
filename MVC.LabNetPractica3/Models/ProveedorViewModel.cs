@@ -17,6 +17,7 @@ namespace MVC.LabNetPractica3.Models
         [StringLength(15, ErrorMessage = "No puede excederse de los 15 caracteres.")]
         public string CiudadProveedor { get; set; }
 
+
         [StringLength(24, ErrorMessage = "No puede excederse de los 24 caracteres.")]
         public string TelefonoProveedor { get; set; }
     }

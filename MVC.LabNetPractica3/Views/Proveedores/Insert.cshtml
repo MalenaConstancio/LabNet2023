@@ -5,6 +5,7 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="~/Content/Style.css">
     <title></title>
 </head>
 <body>
@@ -32,7 +33,7 @@
                         @Html.EditorFor(p => p.TelefonoProveedor, new { @class = "form-control", @value = "Model.TelefonoProveedor" })
                         @Html.ValidationMessageFor(p => p.TelefonoProveedor, "", new { @class = "text-danger" })
                     </div>
-                    <input type="submit" class="btn btn-primary" value="Aceptar" />
+                    <input type="submit" class="btn btn-success" value="ACEPTAR" />
                 </form>
             }
         </div>
