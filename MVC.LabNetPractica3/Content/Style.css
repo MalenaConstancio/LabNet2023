@@ -15,8 +15,6 @@
     }
 
 
-
-
 .btn-success {
     color: #6d94d1;
     background-color: #cfdbf9;
@@ -32,9 +30,11 @@
     background-color: #D8C8F7;
     color: #373737;
     width: 70%;
+    font-size:20px;
 }
 #respuesta {
     background-color: #F7D8C8;
     color: #373737;
     width: 70%;
+    font-size: 20px;
 }
