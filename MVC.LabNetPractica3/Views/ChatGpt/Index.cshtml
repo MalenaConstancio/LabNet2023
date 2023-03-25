@@ -1,0 +1,41 @@
+﻿@model MVC.LabNetPractica3.Models.ChatGptViewModel
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="~/Content/Style.css">
+    <title></title>
+</head>
+<body>
+    <br />
+    <br />
+    <br />
+    <div>
+
+        @using (Html.BeginForm("Index", "ChatGpt", FormMethod.Post))
+        {
+            <div>
+                @Html.TextAreaFor(m => m.Pregunta, new { @class = "form-control" })
+            </div>
+            <br />
+            <input class="btn btn-default " type="submit" value="Aceptar" />
+            @Html.ActionLink("Limpiar", "Limpiar", "", new { @class = "btn btn-default " })
+        }
+    </div>
+    <br />
+    <br />
+    <h1>CHAT</h1>
+    @if (Model != null)
+    {
+        foreach (var item in Model.Chat)
+        {
+            <p class="chat">@item</p>
+            <br />
+        }
+
+    }
+    <br />
+    <br />
+</body>
+</html>
