@@ -33,13 +33,16 @@ namespace MVC.LabNetPractica3.Controllers
                     diccSession.Add(model.Pregunta,respuesta);
 
                     model.Chat = diccSession;
+                    model.Pregunta = "";
                     HttpContext.Session["chat"] = model.Chat;
+
                 }
                 else 
                 {
                     var diccSession = (Dictionary<string, string>)HttpContext.Session["chat"];
                     diccSession.Add(model.Pregunta,respuesta);
                     model.Chat  = diccSession;
+                   
                     HttpContext.Session["chat"] = model.Chat;
                 }
                 

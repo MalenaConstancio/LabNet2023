@@ -15,20 +15,23 @@
 
         @using (Html.BeginForm("Index", "ChatGpt", FormMethod.Post))
         {
-            <div>
-                @Html.TextAreaFor(m => m.Pregunta, new { @class = "form-control" })
+            <div class="preguntaContainer">
+                @Html.TextAreaFor(m => m.Pregunta, new { @class = "form-control" }) <input class="btn btn-default" id="preguntaButton" type="submit" value="?" width="20" />
             </div>
             <br />
-            <input class="btn btn-default " type="submit" value="Aceptar" />
-            @Html.ActionLink("Limpiar", "Limpiar", "", new { @class = "btn btn-default " })
+            <br />
+            <br />
+            <div class="reinicioContainer">
+                <h1>CHAT</h1> @Html.ActionLink("REINICIAR", "Limpiar", "", new { @class = "btn btn-default " })
+            </div>
         }
     </div>
     <br />
-    <br />
-    <h1>CHAT</h1>
-    @if (Model != null && Model.Chat != null){
-        
-        foreach (var item in Model.Chat) {
+    @if (Model != null && Model.Chat != null)
+    {
+
+        foreach (var item in Model.Chat)
+        {
             <p id="pregunta">@item.Key</p>
             <p id="respuesta">@item.Value</p>
             <br />

@@ -29,12 +29,30 @@
 #pregunta {
     background-color: #D8C8F7;
     color: #373737;
-    width: 70%;
+    width: 100%;
     font-size:20px;
 }
 #respuesta {
     background-color: #F7D8C8;
     color: #373737;
-    width: 70%;
+    width: 100%;
     font-size: 20px;
+}
+textarea.form-control {
+    height: auto;
+    width:70%;
+}
+.preguntaContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#preguntaButton {
+    margin-left: 10px;
+    background-color: #E7F7C8;
+}
+.reinicioContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }

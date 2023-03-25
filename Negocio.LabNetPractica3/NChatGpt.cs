@@ -12,7 +12,7 @@ namespace Negocio.LabNetPractica3
     {
         public async Task<string> Responder(string pregunta)
         {
-            string apiKey = "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";
+            string apiKey = "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";
             string respuesta = "";
 
             var openAi = new OpenAIAPI(apiKey);
