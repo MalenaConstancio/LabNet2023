@@ -35,25 +35,103 @@ namespace Servicios.LabNetPractica7.Controllers
             }
         }
 
-        // GET api/values/5
-        public string Get(int id)
+
+        [HttpGet]
+        public IHttpActionResult Get(int id)
         {
-            return "value";
+            try {
+
+                Categories cat = negCat.GetOne(id);
+                CategoriaModel catModel = new CategoriaModel();
+                catModel.IdCategoria = cat.CategoryID;
+                catModel.NombreCategoria = cat.CategoryName;
+                catModel.DescripcionCategoria = cat.Description;
+
+                return Ok(catModel);
+            }catch { 
+
+                return BadRequest("Error"); 
+            }
+          
         }
 
-        // POST api/values
-        public void Post([FromBody] string value)
+        [HttpPost]
+        public IHttpActionResult Post(CategoriaModel catModel)
         {
+            ModelState.Remove("IdCategoria");
+            if (!ModelState.IsValid)
+            {
+                return BadRequest("Error");
+            }
+            else
+            {
+                try
+                {
+
+                    Categories categoria = new Categories();
+                    categoria.CategoryName = catModel.NombreCategoria;
+                    categoria.Description = catModel.DescripcionCategoria;
+                    negCat.Add(categoria);
+
+                    return Ok(categoria);
+                }
+                catch(Exception ex)
+                {
+                    return BadRequest(ex.Message);
+                }
+            }
         }
 
-        // PUT api/values/5
-        public void Put(int id, [FromBody] string value)
+        [HttpPut]
+        public IHttpActionResult Put(CategoriaModel catModel)
         {
-        }
+            if (!ModelState.IsValid)
+            {
+                return BadRequest("Error");
+            }
+            else
+            {
+                try
+                {
 
-        // DELETE api/values/5
-        public void Delete(int id)
+                    Categories cat = new Categories();
+                    cat.CategoryID = catModel.IdCategoria;
+                    cat.CategoryName = catModel.NombreCategoria;
+                    cat.Description = catModel.DescripcionCategoria;
+
+                    if (negCat.Update(cat))
+                    {
+                        return Ok(cat);
+                    }
+                    else
+                    {
+                        return BadRequest();
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    return BadRequest(ex.Message);
+                }
+
+            }
+        }
+        [HttpDelete]
+        public IHttpActionResult Delete(int id)
         {
+            Categories cat = new Categories();
+            cat.CategoryID = id;
+
+            if (negCat.Delete(cat))
+            {
+                return Ok();
+            }
+            else
+            {
+                return BadRequest("No se pueden eliminar Categorias que tengan Productos asignados");
+            }
+
+
         }
     }
 }
