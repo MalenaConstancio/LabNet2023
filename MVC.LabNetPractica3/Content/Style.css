@@ -24,12 +24,17 @@
     width: 100%;
 }
 
-    .btn-success:hover {
-        background-color: #2c73e3;
-    }
+.btn-success:hover {
+      background-color: #2c73e3;
+}
 
-.chat {
-    background-color: #EDE2FD;
-    color: #B4B4B4;
-    width:70%;
+#pregunta {
+    background-color: #D8C8F7;
+    color: #373737;
+    width: 70%;
+}
+#respuesta {
+    background-color: #F7D8C8;
+    color: #373737;
+    width: 70%;
 }

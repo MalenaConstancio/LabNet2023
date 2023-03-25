@@ -17,35 +17,41 @@ namespace MVC.LabNetPractica3.Controllers
         
         public ActionResult Index()
         {
-
+            
             return View();
         }
 
         [HttpPost]
         public async Task<ActionResult>  Index(ChatGptViewModel model)
         {
-            System.Web.HttpContext.Current.Session["chat"] = model.Chat;
             var respuesta = await negChat.Responder(model.Pregunta);
 
-            model.Respuesta = respuesta;
+           
+                if (HttpContext.Session["chat"]==null) {
 
-            if (model.Chat != null) { 
-                model.Chat.Add(model.Respuesta);
-            }
-            else
-            {
-                List<string> chat = new List<string>();
-                chat.Add(respuesta);
-                model.Chat = chat;
-            }
+                    Dictionary<string, string> diccSession = new Dictionary<string, string>();
+                    diccSession.Add(model.Pregunta,respuesta);
 
+                    model.Chat = diccSession;
+                    HttpContext.Session["chat"] = model.Chat;
+                }
+                else 
+                {
+                    var diccSession = (Dictionary<string, string>)HttpContext.Session["chat"];
+                    diccSession.Add(model.Pregunta,respuesta);
+                    model.Chat  = diccSession;
+                    HttpContext.Session["chat"] = model.Chat;
+                }
+                
             return View(model);
         }
 
         public ActionResult Limpiar(ChatGptViewModel model) {
 
-            List<string> chat = new List<string>();
+            HttpContext.Session["chat"] = null;
             model.Pregunta = "";
+            model.Respuesta = "";
+            model.Chat = (Dictionary<string, string>)HttpContext.Session["chat"];
 
             return View("Index",model);
         }

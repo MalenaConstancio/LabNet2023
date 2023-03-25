@@ -26,14 +26,13 @@
     <br />
     <br />
     <h1>CHAT</h1>
-    @if (Model != null)
-    {
-        foreach (var item in Model.Chat)
-        {
-            <p class="chat">@item</p>
+    @if (Model != null && Model.Chat != null){
+        
+        foreach (var item in Model.Chat) {
+            <p id="pregunta">@item.Key</p>
+            <p id="respuesta">@item.Value</p>
             <br />
         }
-
     }
     <br />
     <br />

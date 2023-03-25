@@ -12,7 +12,7 @@ namespace Negocio.LabNetPractica3
     {
         public async Task<string> Responder(string pregunta)
         {
-            string apiKey = "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";
+            string apiKey = "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";
             string respuesta = "";
 
             var openAi = new OpenAIAPI(apiKey);
@@ -22,13 +22,22 @@ namespace Negocio.LabNetPractica3
             completion.Temperature = 0.5;
             completion.MaxTokens = 4000;
 
-            var resultado = await openAi.Completions.CreateCompletionAsync(completion);
+            try
+            {
+                var resultado = await openAi.Completions.CreateCompletionAsync(completion);
 
-            if (respuesta != null) {
-                foreach (var item in resultado.Completions)
+                if (respuesta != null)
                 {
-                    respuesta = item.Text;
+                    foreach (var item in resultado.Completions)
+                    {
+                        respuesta = item.Text;
+                    }
+                    
                 }
+
+            }
+            catch (Exception ex) {
+                Console.WriteLine(ex.Message);
             }
             return respuesta;
         }
