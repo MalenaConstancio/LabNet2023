@@ -8,5 +8,11 @@ import { Supplier } from '../interfaces/supplier';
 })
 export class SupplierService {
 
+  proveedores: Supplier[]=[];
+
   constructor(private http: HttpClient) { }
+
+  getSuppliers(): Observable<Supplier[]>{
+    return this.http.get<Supplier[]>('https://localhost:44362/api/Suppliers');
+  }
 }
