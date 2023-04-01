@@ -7,13 +7,14 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace Servicios.LabNetPractica7.Controllers
 {
     public class SuppliersController : ApiController
     {
         IProveedor negProv = new NProveedor();
-
+        [EnableCors(origins: "https://localhost:4200", headers: "*,accept,content-type,origin", methods: "get,post,put,delete")]
         [HttpGet]
         public IHttpActionResult Get()
         {
