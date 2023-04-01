@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
+import { HttpClientModule } from "@angular/common/http";
+import { FormsModule,ReactiveFormsModule,Validators } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './shared/header/header.component';
@@ -13,7 +15,7 @@ import { SuppliersComponent } from './pages/suppliers/suppliers.component';
 import { CategorieService } from './services/categorie.service';
 import { SupplierService } from './services/supplier.service';
 
-import { HttpClientModule } from "@angular/common/http";
+
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { HttpClientModule } from "@angular/common/http";
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [CategorieService,SupplierService],
   bootstrap: [AppComponent]
