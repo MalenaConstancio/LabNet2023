@@ -10,6 +10,11 @@ import { HomeComponent } from './pages/home/home.component';
 import { CategoriesComponent } from './pages/categories/categories.component';
 import { SuppliersComponent } from './pages/suppliers/suppliers.component';
 
+import { CategorieService } from './services/categorie.service';
+import { SupplierService } from './services/supplier.service';
+
+import { HttpClientModule } from "@angular/common/http";
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,13 +22,14 @@ import { SuppliersComponent } from './pages/suppliers/suppliers.component';
     FooterComponent,
     HomeComponent,
     CategoriesComponent,
-    SuppliersComponent
+    SuppliersComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [CategorieService,SupplierService],
   bootstrap: [AppComponent]
 })
 
