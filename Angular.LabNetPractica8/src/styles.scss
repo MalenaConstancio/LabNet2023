@@ -106,8 +106,11 @@ table.table tr th:first-child {
 	width: 30px;
 }
 table.table tr th:last-child {
-	width: 600px;
+	width: 250px;
 }
+
+
+
 table.table-striped tbody tr:nth-of-type(odd) {
 	background-color: #fcfcfc;
 }
