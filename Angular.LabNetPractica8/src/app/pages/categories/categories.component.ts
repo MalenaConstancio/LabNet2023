@@ -81,10 +81,21 @@ export class CategoriesComponent implements OnInit {
   }
 
   editCategorie(){
+
+    let nombre:string = this.categoria.NombreCategoria
+    let descripcion:string= this.categoria.DescripcionCategoria
+    
+    if(this.frmEditar.value.NombreCategoria!=''){
+      nombre=this.frmEditar.value.NombreCategoria
+    }
+    if(this.frmEditar.value.DescripcionCategoria!=''){
+      descripcion=this.frmEditar.value.DescripcionCategoria
+    }
+
     const categoriaEdit :Categorie={
       IdCategoria:this.categoria.IdCategoria,
-      NombreCategoria:this.frmEditar.value.NombreCategoria,
-      DescripcionCategoria:this.frmEditar.value.DescripcionCategoria}
+      NombreCategoria:nombre,
+      DescripcionCategoria:descripcion}
 
     this.categorieService.editCategorie(
       categoriaEdit

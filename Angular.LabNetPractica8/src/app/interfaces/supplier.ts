@@ -4,3 +4,9 @@ export interface Supplier {
     CiudadProveedor:string,
     TelefonoProveedor:string
 }
+
+export interface SupplierAdd {
+    NombreProveedor:string,
+    CiudadProveedor:string,
+    TelefonoProveedor:string
+}
