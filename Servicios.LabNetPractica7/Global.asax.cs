@@ -22,8 +22,16 @@ namespace Servicios.LabNetPractica7
         protected void Application_BeginRequest(object sender, EventArgs e)
         {
             HttpContext.Current.Response.AddHeader("Access-Control-Allow-Origin", "http://localhost:4200");
-            HttpContext.Current.Response.AddHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
-            HttpContext.Current.Response.AddHeader("Access-Control-Allow-Headers", "Content-Type, Authorization, X-Requested-With");
+
+            if (HttpContext.Current.Request.HttpMethod == "OPTIONS")
+            {
+                //These headers are handling the "pre-flight" OPTIONS call sent by the browser
+                HttpContext.Current.Response.AddHeader("Access-Control-Allow-Methods", "POST, PUT,DELETE,GET");
+                HttpContext.Current.Response.AddHeader("Access-Control-Allow-Headers", "content-type");
+                HttpContext.Current.Response.End();
+            }
+            HttpContext.Current.Response.AddHeader("Access-Control-Allow-Methods", "POST, PUT, PATCH, GET, DELETE,OPTIONS");
+            HttpContext.Current.Response.AddHeader("Access-Control-Allow-Headers", " Origin, X-Api-Key, X-Requested-With, Content-Type, Accept, Authorization");
         }
     }
 }
