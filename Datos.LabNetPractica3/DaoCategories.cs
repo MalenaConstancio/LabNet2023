@@ -33,7 +33,7 @@ namespace Datos.LabNetPractica3
                 }
                 catch (Exception)
                 {
-                    throw;
+                    return false;
                 }
             }
             return false;
@@ -54,7 +54,7 @@ namespace Datos.LabNetPractica3
                 }
                 catch (Exception)
                 {
-                    throw;
+                    return false;
                 }
             }
             return false;
@@ -71,9 +71,9 @@ namespace Datos.LabNetPractica3
                     _context.SaveChanges();
                     return true;
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
-                  throw;
+                    return false;
                 }
             }
             return false;
