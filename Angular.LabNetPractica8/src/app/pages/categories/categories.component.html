@@ -7,26 +7,26 @@
 						<h2>Gestionar <b>Categorias</b></h2>
 					</div>
 					<div class="col-sm-6">
-						<a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal"><span><img src="/assets/icoonoAgregar.png" alt=""/>  Agregar Nueva Categoria</span></a>	
+						<button  class="btn btn-success"(click)="limpiarCamposAgregar()" data-bs-toggle="modal" data-bs-target="#addCategorieModal">  <span><img src="/assets/icoonoAgregar.png" alt=""/>  Agregar Nueva Categoria</span></button>
 					</div>
 				</div>
 			</div>
 			<table class="table table-striped table-hover">
 				<thead>
 					<tr>
-						<th>Id</th>
+						<th class="d-none"> </th>
 						<th>Nombre</th>
 						<th>Descripcion</th>
 					</tr>
 				</thead>
 				<tbody *ngIf="categorias">
 						<tr *ngFor="let categorie of categorias">
-							<td>{{categorie.IdCategoria}}</td>
+							<td class="d-none">{{categorie.IdCategoria}}</td>
 							<td>{{categorie.NombreCategoria}}</td>
 							<td>{{categorie.DescripcionCategoria}}</td>
 							<td>
-								<a href="#editEmployeeModal" class="edit" data-toggle="modal"><img src="/assets//iconoEdit.png" alt=""/></a>
-								<a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><img src="/assets/iconoDelete.png" alt=""/></a>
+								<a href="" class="edit" data-bs-toggle="modal" data-bs-target="#editCategorieModal"><img src="/assets//iconoEdit.png" alt=""/></a>
+								<a href="" class="delete" (click)="confirmarEliminar(categorie.IdCategoria)" data-bs-toggle="modal" data-bs-target="#deleteCategorieModal"><img src="/assets/iconoDelete.png" alt=""/></a>
 							</td>
 						</tr>
 				</tbody>
@@ -46,83 +46,86 @@
 	</div>        
 </div>
 <!-- Add Modal HTML -->
-<div id="addEmployeeModal" class="modal fade">
+<div id="addCategorieModal" class="modal fade"data-bs-backdrop="static">
 	<div class="modal-dialog">
 		<div class="modal-content">
-			<form>
+			<form [formGroup]="frmAgregar" (submit)="addCategorie()" name="frmAgregar"class="fontModal">
 				<div class="modal-header">						
 					<h4 class="modal-title">Agregar Categoria</h4>
-					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<button id="btnClose"type="button"  data-bs-dismiss="modal" aria-hidden="true"><img src="/assets/iconoClose.png"></button>
 				</div>
 				<div class="modal-body">					
 					<div class="form-group">
 						<label>Nombre</label>
-						<input type="text" class="form-control" required>
+						<input type="text" formControlName="NombreCategoria" class="form-control" required>
+						<span *ngIf="frmAgregar.get('NombreCategoria')?.invalid && frmAgregar.get('NombreCategoria')?.touched">
+							<div class="alert alert-danger" *ngIf="frmAgregar.get('NombreCategoria')?.errors?.['required']">El nombre no puede quedar vacío</div>
+							<div class="alert alert-danger" *ngIf="frmAgregar.get('NombreCategoria')?.errors?.['maxlength']">Debe tener como máximo 15 caracteres</div>
+						</span>
 					</div>
 					<div class="form-group">
 						<label>Descripcion</label>
-						<input type="text" class="form-control" required>
-					</div>
-					<div class="form-group">
-						<label>Id</label>
-						<input type="text" class="form-control" required>
-					</div>					
+						<input type="text" formControlName="DescripcionCategoria" class="form-control" required>
+						<span class="alert alert-danger"*ngIf="frmAgregar.get('DescripcionCategoria')?.invalid && frmAgregar.get('DescripcionCategoria')?.touched">
+							La descripción no puede quedar vacía
+						</span>
+					</div>				
 				</div>
 				<div class="modal-footer">
-					<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancelar">
-					<input type="submit" class="btn btn-success" value="Agregar">
+					<input type="button" class="btn btn-default" data-bs-dismiss="modal" value="Cancelar">
+					<input type="submit" class="btn btn-success" [disabled]="!frmAgregar.valid" value="Agregar">
 				</div>
 			</form>
 		</div>
 	</div>
 </div>
 <!-- Edit Modal HTML -->
-<div id="editEmployeeModal" class="modal fade">
+<div id="editCategorieModal" class="modal fade">
 	<div class="modal-dialog">
 		<div class="modal-content">
-			<form>
+			<form class="fontModal">
 				<div class="modal-header">						
 					<h4 class="modal-title">Editar Categoria</h4>
-					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<button type="button" id="btnClose" class="close" data-bs-dismiss="modal" aria-hidden="true"><img src="/assets/iconoClose.png"></button>
 				</div>
-				<div class="modal-body">					
+				<div class="modal-body">
+					<div class="form-group d-none">
+						<label>Id</label>
+						<input type="text" class="form-control" required>
+					</div>						
 					<div class="form-group">
 						<label>Nombre</label>
 						<input type="text" class="form-control" required>
 					</div>
 					<div class="form-group">
 						<label>Descripcion</label>
-						<input type="email" class="form-control" required>
-					</div>
-					<div class="form-group">
-						<label>Id</label>
 						<input type="text" class="form-control" required>
-					</div>					
+					</div>		
 				</div>
 				<div class="modal-footer">
-					<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancelar">
-					<input type="submit" class="btn btn-info" value="Guardar">
+					<input type="button" class="btn btn-default" data-bs-dismiss="modal" value="Cancelar">
+					<input type="submit" class="btn btn-success" value="Guardar">
 				</div>
 			</form>
 		</div>
 	</div>
 </div>
 <!-- Delete Modal HTML -->
-<div id="deleteEmployeeModal" class="modal fade">
+<div id="deleteCategorieModal" class="modal fade">
 	<div class="modal-dialog">
 		<div class="modal-content">
-			<form>
+			<form class="fontModal">
 				<div class="modal-header">						
 					<h4 class="modal-title">Eliminar Categoria</h4>
-					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<button type="button" id="btnClose" class="close" data-bs-dismiss="modal" aria-hidden="true"><img src="/assets/iconoClose.png"></button>
 				</div>
 				<div class="modal-body">					
-					<p>Seguro que quiere eliminar esta Categoria?</p>
-					<p class="text-warning"><small>No puede eliminar Categorias que posean Productos asignados.</small></p>
+					<p>Seguro que quiere eliminar la Categoria {{categoria.NombreCategoria}}?</p>
+					<p class="text-black-50"><small>*No puede eliminar Categorias que posean Productos asignados</small></p>
 				</div>
 				<div class="modal-footer">
-					<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancelar">
-					<input type="submit" class="btn btn-danger" value="Eliminar">
+					<input type="button" class="btn btn-default" data-bs-dismiss="modal" value="Cancelar">
+					<input type="submit"  class="btn btn-success" (click)="deleteCategorie(categoria.IdCategoria)" value="Eliminar">
 				</div>
 			</form>
 		</div>

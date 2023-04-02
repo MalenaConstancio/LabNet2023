@@ -106,7 +106,7 @@ table.table tr th:first-child {
 	width: 30px;
 }
 table.table tr th:last-child {
-	width: 50%;
+	width: 600px;
 }
 table.table-striped tbody tr:nth-of-type(odd) {
 	background-color: #fcfcfc;
@@ -242,4 +242,22 @@ table.table .avatar {
     --bs-btn-disabled-color: #fff;
     --bs-btn-disabled-bg: #9C977C;
     --bs-btn-disabled-border-color: #9C977C;
+}
+.fontModal{
+	font-weight: 300;
+    font-size: 15px;
+    font-family: 'Roboto', sans-serif;
+    color: rgb(100, 100, 100);
+}
+
+#btnClose{
+	border-style: none;
+    background-color: transparent;
+}
+
+.alert{
+
+	--bs-alert-padding-x: 0,7rem;
+    --bs-alert-padding-y: 0,7rem;
+	border-radius: 0;
 }

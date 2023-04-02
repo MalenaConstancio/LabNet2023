@@ -14,18 +14,18 @@
 			<table class="table table-striped table-hover">
 				<thead>
 					<tr>
-						<th>Id</th>
+						<th class="d-none">Id</th>
 						<th>Nombre</th>
 						<th>Ciudad</th>
                         <th>Telefono</th>
 					</tr>
 				</thead>
-				<tbody>
-					<tr>
-						<td>1</td>
-						<td>thomashardy</td>
-						<td>Portland</td>
-                        <td>3416853939</td>
+				<tbody *ngIf="proveedores">
+					<tr *ngFor="let supplier of proveedores">
+						<td class="d-none">{{supplier.IdProveedor}}</td>
+						<td>{{supplier.NombreProveedor}}</td>
+						<td>{{supplier.CiudadProveedor}}</td>
+                        <td>{{supplier.TelefonoProveedor}}</td>
 						<td>
 							<a href="#editEmployeeModal" class="edit" data-toggle="modal"><img src="/assets//iconoEdit.png" alt=""/></a>
 							<a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><img src="/assets/iconoDelete.png" alt=""/></a>
