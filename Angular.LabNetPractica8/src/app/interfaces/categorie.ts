@@ -3,3 +3,8 @@ export interface Categorie {
     NombreCategoria:string,
     DescripcionCategoria:string
 }
+
+export interface CategorieAdd {
+    NombreCategoria:string,
+    DescripcionCategoria:string
+}
