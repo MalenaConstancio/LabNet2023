@@ -25,8 +25,8 @@
 							<td>{{categorie.NombreCategoria}}</td>
 							<td>{{categorie.DescripcionCategoria}}</td>
 							<td>
-								<a href="" class="edit" data-bs-toggle="modal" data-bs-target="#editCategorieModal"><img src="/assets//iconoEdit.png" alt=""/></a>
-								<a href="" class="delete" (click)="confirmarEliminar(categorie.IdCategoria)" data-bs-toggle="modal" data-bs-target="#deleteCategorieModal"><img src="/assets/iconoDelete.png" alt=""/></a>
+								<a href="" class="edit" (click)="traerCategoria(categorie.IdCategoria)" data-bs-toggle="modal" data-bs-target="#editCategorieModal"><img src="/assets//iconoEdit.png" alt=""/></a>
+								<a href="" class="delete" (click)="traerCategoria(categorie.IdCategoria)" data-bs-toggle="modal" data-bs-target="#deleteCategorieModal"><img src="/assets/iconoDelete.png" alt=""/></a>
 							</td>
 						</tr>
 				</tbody>
@@ -80,38 +80,45 @@
 	</div>
 </div>
 <!-- Edit Modal HTML -->
-<div id="editCategorieModal" class="modal fade">
+<div id="editCategorieModal" class="modal fade" data-bs-backdrop="static">
 	<div class="modal-dialog">
 		<div class="modal-content">
-			<form class="fontModal">
+			<form [formGroup]="frmEditar" (submit)="editCategorie()" name="frmEditar" class="fontModal">
 				<div class="modal-header">						
 					<h4 class="modal-title">Editar Categoria</h4>
 					<button type="button" id="btnClose" class="close" data-bs-dismiss="modal" aria-hidden="true"><img src="/assets/iconoClose.png"></button>
 				</div>
 				<div class="modal-body">
 					<div class="form-group d-none">
-						<label>Id</label>
-						<input type="text" class="form-control" required>
+						<label >Id</label>
+						<input type="text" formControlName="IdCategoria" class="form-control" value={{categoria.IdCategoria}} required>
 					</div>						
 					<div class="form-group">
-						<label>Nombre</label>
-						<input type="text" class="form-control" required>
+						<label >Nombre</label>
+						<input type="text" formControlName="NombreCategoria" class="form-control" value={{categoria.NombreCategoria}} required>
+						<span *ngIf="frmEditar.get('NombreCategoria')?.invalid && frmEditar.get('NombreCategoria')?.touched">
+							<div class="alert alert-danger" *ngIf="frmEditar.get('NombreCategoria')?.errors?.['required']">El nombre no puede quedar vacío</div>
+							<div class="alert alert-danger" *ngIf="frmEditar.get('NombreCategoria')?.errors?.['maxlength']">Debe tener como máximo 15 caracteres</div>
+						</span>
 					</div>
 					<div class="form-group">
-						<label>Descripcion</label>
-						<input type="text" class="form-control" required>
+						<label >Descripcion</label>
+						<input type="text" formControlName="DescripcionCategoria" class="form-control" value={{categoria.DescripcionCategoria}} required>
+						<span class="alert alert-danger"*ngIf="frmEditar.get('DescripcionCategoria')?.invalid && frmEditar.get('DescripcionCategoria')?.touched">
+							La descripción no puede quedar vacía
+						</span>
 					</div>		
 				</div>
 				<div class="modal-footer">
 					<input type="button" class="btn btn-default" data-bs-dismiss="modal" value="Cancelar">
-					<input type="submit" class="btn btn-success" value="Guardar">
+					<input type="submit" class="btn btn-success"  value="Guardar">
 				</div>
 			</form>
 		</div>
 	</div>
 </div>
 <!-- Delete Modal HTML -->
-<div id="deleteCategorieModal" class="modal fade">
+<div id="deleteCategorieModal" class="modal fade" data-bs-backdrop="static">
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<form class="fontModal">

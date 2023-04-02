@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Categorie ,CategorieAdd} from 'src/app/interfaces/categorie';
 import { CategorieService } from 'src/app/services/categorie.service';
 import { FormGroup,FormBuilder,Validators } from '@angular/forms';
+
 import Swal from 'sweetalert2';
 
 @Component({
@@ -44,7 +45,7 @@ export class CategoriesComponent implements OnInit {
   }
 
   getCategories(){
-      this.categorieService.getCategories().subscribe({
+    this.categorieService.getCategories().subscribe({
       next:Response=> this.categorias=Response,
       error: err=> Swal.fire({
         icon: 'error',
@@ -79,14 +80,44 @@ export class CategoriesComponent implements OnInit {
   });
   }
 
+  editCategorie(){
+    const categoriaEdit :Categorie={
+      IdCategoria:this.categoria.IdCategoria,
+      NombreCategoria:this.frmEditar.value.NombreCategoria,
+      DescripcionCategoria:this.frmEditar.value.DescripcionCategoria}
+
+    this.categorieService.editCategorie(
+      categoriaEdit
+    ).subscribe({next:()=> {this.getCategories()},
+    error: err=>{
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Error en el servidor!',
+      });
+      this.limpiarCamposAgregar();
+    },
+    complete:()=>{
+      Swal.fire({
+        icon: 'success',
+        title: 'Operación exitosa',
+        text: this.frmEditar.value.NombreCategoria+' ha sido modificada',
+      });
+      this.limpiarCamposAgregar();
+     
+    }
+  });
+  }
+
+
   deleteCategorie(Id:Number){
     this.categorieService.deleteCategorie(this.categoria.IdCategoria).subscribe({
     next:()=>{this.getCategories()},
   error: err=>{
     Swal.fire({
       icon: 'error',
-      title: 'Oops...',
-      text: 'Error en el servidor!',
+      title: 'Operación inválida',
+      text: 'No se pueden eliminar Categorias con Productos asignados',
     });
   },
   complete:()=>{
@@ -99,12 +130,11 @@ export class CategoriesComponent implements OnInit {
   });
   }
 
-  confirmarEliminar(id:Number){
+  traerCategoria(id:Number){
   this.categorieService.getCategorieById(id).subscribe(
     data=> this.categoria = { IdCategoria:data.IdCategoria , NombreCategoria:data.NombreCategoria, DescripcionCategoria:data.DescripcionCategoria})
   }
   
-
   limpiarCamposAgregar(){
     this.frmAgregar.get('NombreCategoria')?.reset('');
     this.frmAgregar.get('DescripcionCategoria')?.reset('');
